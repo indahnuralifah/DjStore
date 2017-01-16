@@ -1,0 +1,50 @@
+<?php $__env->startSection('content'); ?>
+
+
+    <div id="all">
+
+        <div id="content">
+            <div class="container">
+
+                <div class="col-md-12">
+
+                                <!-- /.text -->
+                            </div>
+                            <!-- /.product -->
+                        </div>
+
+ <div class="row products">
+                    <?php foreach($data2 as $key => $produk): ?>
+
+                      
+    <div class="box">
+        <div class="product">
+                           <div class="flip-container">
+                                    <div class="flipper">
+                                        <div class="front">
+                                            <a href="detail.html">
+                                                <img src="<?php echo e(url('gambar/'.$produk->Gambar)); ?>" alt="" class="img-responsive">
+                                            </a>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <a href="detail.html" class="invisible">
+                                    <img src="<?php echo e(url('gambar/'.$produk->Gambar)); ?>" alt="" class="img-responsive">
+                                </a>
+                                <div class="text">
+                                    <h3><?php echo e($produk->nama_barang); ?></h3>
+                                    <p class="price">Rp. <?php echo e($produk->harga); ?></p>
+                                    <p class="as">
+                                        <a href="addtocart/<?php echo e($produk->id); ?>" type="submit" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Add </a>
+                                    </p>
+                                </div>
+                                <!-- /.text -->
+                            </div>
+                            <!-- /.product -->
+                        </div>
+            </div>
+
+                        <?php endforeach; ?>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('app_home', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

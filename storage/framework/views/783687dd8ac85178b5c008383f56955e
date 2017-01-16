@@ -1,0 +1,70 @@
+<?php $__env->startSection('content'); ?>
+
+<style type="text/css">
+    .none{
+        display: none!important;
+    }
+</style>
+            <div class="box">
+            <form id="form_check">
+            <div class="form-group">
+                  <label>Masukan Id Pemesanan</label>
+                  <input type="text" class="form-control" id="no_pesanan" placeholder="Id Pemesanan" name="no_pesanan">
+                </div> 
+
+            <div class="box-footer">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+            </form>
+
+             <div class="row none" style="margin: auto;" id="info-message">
+            <table class="table">
+                <tr>
+                    <td>Nomor Pemesanan</td>
+                    <td id="no-pesanan"></td>
+                </tr>
+                <tr>
+                    <td>Nama Pemesan</td>
+                    <td id="nama-pesan"></td>
+                </tr>
+                <tr>
+                    <td>Alamat</td>
+                    <td id="alamat-pesan"></td>
+                </tr>
+                <tr>
+                    <td>No. Telepon</td>
+                    <td id="telp-pesan"></td>
+                </tr>
+                 <tr>
+                    <td>Email</td>
+                    <td id="email"></td>
+                </tr>
+                 <tr>
+                    <td>Nama Item</td>
+                    <td id="nama-item"></td>
+                </tr>
+                 <tr>
+                    <td>Warna</td>
+                    <td id="warna"></td>
+                </tr>
+                 <tr>
+                    <td>Jumlah Barang</td>
+                    <td id="jml-brg"></td>
+                </tr>
+                 <tr>
+                    <td>Jenis Item</td>
+                    <td id="jns-item"></td>
+                </tr>
+                 <tr>
+                    <td>Ukuran</td>
+                    <td id="ukuran"></td>
+                </tr>
+                 <tr>
+                    <td>Keterangan</td>
+                    <td id="ket"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('app_home', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
