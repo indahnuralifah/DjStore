@@ -10,6 +10,7 @@
     <meta name="description" content="Obaju e-commerce template">
     <meta name="author" content="Ondrej Svestka | ondrejsvestka.cz">
     <meta name="keywords" content="">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>
       DJStoreJakarta
@@ -284,4 +285,44 @@
     <script src="{{url('js/modernizr.js')}}"></script>
     <script src="{{url('js/bootstrap-hover-dropdown.js')}}"></script>
     <script src="{{url('js/owl.carousel.min.js')}}"></script>
-    <script src="{{url('js/front.js')}}"></script>  
+    <!-- <script src="{{url('js/front.js')}}"></script>  
+    <script src="{{ asset('plugins/input-mask/jquery.inputmask.js') }}"></script>
+    <script src="{{ asset('plugins/input-mask/jquery.inputmask.date.extensions.js') }}"></script>
+    <script src="{{ asset('plugins/input-mask/jquery.inputmask.extensions.js') }}"></script> -->
+    <script type="text/javascript">
+    $(function(){
+        $('#form_check').submit(function(e){
+            e.preventDefault();
+            $.ajax({
+                url: '/order/check?no_pesanan='+$('#no_pesanan').val(),
+                type: 'get',
+                data: $('#form_check').serializeArray(),
+                success:function(data){
+                    if (data.success==true) {
+                        $('#info-message').removeClass('none');
+                        $('#no-pesanan').html(data.order.no_pesanan);
+                        $('#nama-pesan').html(data.order.nama_pembeli);
+                        $('#telp-pesan').html(data.order.no_hp);
+                        $('#email').html(data.order.email);
+                        $('#alamat-pesan').html(data.order.alamat);
+                        $('#nama-item   ').html(data.order.nama_barang);
+                        $('#jenis-item').html(data.order.jenis_barang);
+                        $('#warna').html(data.order.warna);
+                        $('#ukuran').html(data.order.ukuran);
+                        $('#jumlah-barang').html(data.order.jumlah_barang);
+                        $('#keterangan').html(data.order.keterangan);
+                        $('#status').html(data.order.status);
+                    }
+
+                    else{
+                        alert('Data tidak ditemukan');
+                        $('#info-message').addClass('none');
+                    }
+                },
+                error:function(){
+                    alert('Not internet connection');
+                }
+            });
+        });
+    });
+</script>

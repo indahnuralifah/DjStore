@@ -92,8 +92,8 @@ class ProdukController extends Controller {
 		$post->total = Input::get('total');
 
 		if(Input::hasFile('gambar')){
-			$gambar = date("YmdHis");
-			uniqid().".".Input::file('gambar')->getClientOriginalExtension();
+			$gambar = date("YmdHis")
+			.uniqid().".".Input::file('gambar')->getClientOriginalExtension();
 			Input::file('gambar')->move(storage_path(),$gambar);
 			$post->gambar = $gambar;
 		}
@@ -132,7 +132,9 @@ class ProdukController extends Controller {
 	{
 		$data2 = array('data2'=>Produk::all());
 		$data = array('data'=>Produk::find($id));
-         return view('produk.edit')->with($data)->with($data2);
+		$produk = array('produk'=>Produk::all());
+		$b['b'] = produk::all();
+         return view('produk.edit')->with($data)->with($data2)->with($produk)->with($b);
 	}
 
 	/**
@@ -141,7 +143,7 @@ class ProdukController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update()
 	{
 		$produk = Produk::find(Input::get('id'));
    		$produk->nama_barang = Input::get('nama_barang');
@@ -150,8 +152,8 @@ class ProdukController extends Controller {
 		$produk->total = Input::get('total');
 
 		if(Input::hasFile('gambar')){
-			$gambar = date("YmdHis");
-			uniqid().".".Input::file('gambar')->getClientOriginalExtension();
+			$gambar = date("YmdHis")
+			.uniqid().".".Input::file('gambar')->getClientOriginalExtension();
 			Input::file('gambar')->move(storage_path(),$gambar);
 			$produk->gambar = $gambar;
 		}

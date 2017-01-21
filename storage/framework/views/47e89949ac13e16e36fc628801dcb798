@@ -1,5 +1,4 @@
-@extends('admin')
-@section('content')
+<?php $__env->startSection('content'); ?>
 <div class="right_col" role="main">
    <div class="x_panel" style="">
       <div class="x_title">
@@ -15,22 +14,22 @@
                  </tr>
              </thead>
              <tbody>
-                @foreach($data1 as $key => $data)
-                @foreach($data->produk as $key => $data2)
+                <?php foreach($data1 as $key => $data): ?>
+                <?php foreach($data->produk as $key => $data2): ?>
                     <tr>
-                        <td>{{ $data2->nama_produk }}</td>
-                        <td>{{ $data2->nama_obat }}</td>
-                        <td>{{ $data2->total }}</td>
+                        <td><?php echo e($data2->nama_produk); ?></td>
+                        <td><?php echo e($data2->nama_obat); ?></td>
+                        <td><?php echo e($data2->total); ?></td>
                     </tr>
-                @endforeach
-                @endforeach
+                <?php endforeach; ?>
+                <?php endforeach; ?>
             </tbody>
          </table>
          
          </ul>
       </div>
-      <form action="{{ url('/stok/save/') }}" method="POST" enctype="multipart/form-data">     
-         <input type="hidden" name="_token" value="{{csrf_token()}}">
+      <form action="<?php echo e(url('/stok/save/')); ?>" method="POST" enctype="multipart/form-data">     
+         <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
       </form>
       <div class="x_content">
       </div>
@@ -49,5 +48,7 @@
    <div id="notif-group" class="tabbed_notifications"></div>
 </div>
 </body>
-@endsection
+<?php $__env->stopSection(); ?>
 </html>
+
+<?php echo $__env->make('admin', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

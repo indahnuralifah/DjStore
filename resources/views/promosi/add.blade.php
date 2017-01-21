@@ -48,48 +48,7 @@
             </div>
             </div>
             </div>
-
-              <div class="x_panel" style="">
-                
-              
-            <div class="x_title">
-                    <h2>View Promosi</h2>
-                    <ul class="nav navbar-right panel_toolbox"></ul>
-                    <div class="clearfix"></div>
-            </div>
-            <div class="x_content">
-                  <table class="table table-striped responsive-utilities jambo_table bulk_action">
-                            <thead>
-                              <tr class="headings">
-                                <tr class="headings">
-                                 <th>No<center> </th>
-                                 <th>Judul</th>
-                                 <th>Keterangan</th>
-                                 <th>Gambar</th>
-                                 <th></th>
-                                 <th></th> 
-                                </tr>
-                             </thead> 
-                           <tbody>   
-                           <?php $i = 1; ?>
-                          @foreach($data as $promosi)
-                        <tr>
-                            <td>{{ $i++}}</td>
-                            <td>{{ $promosi->judul}}</td>
-                            <td>{{ $promosi->ket}}</td>
-                            <td>{{ $promosi->gambar}}</td>
-                            <td>
-                        <a href="{{ url('/edit/promosi/'.$promosi->id) }}"><i class="fa fa-pencil" style="font-size: 16px !important"></i> Edit</a>
-                        </td>
-                        <td>
-                              <a href="{{ url('/delete/promosi/'.$promosi->id) }}" onclick="return confirm('Delete?')"><i class="fa fa-times"></i> Delete</a>
-                              </td>
-                         </tr> 
-                          @endforeach                     
-                    </tbody>
-                  </table>
-                </div>
-            </div>
+            
 
     </div>
     </div>

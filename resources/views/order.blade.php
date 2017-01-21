@@ -6,6 +6,7 @@
         display: none!important;
     }
 </style>
+
             <div class="box">
             <form id="form_check">
             <div class="form-group">
@@ -50,11 +51,11 @@
                 </tr>
                  <tr>
                     <td>Jumlah Barang</td>
-                    <td id="jml-brg"></td>
+                    <td id="jumlah-barang"></td>
                 </tr>
                  <tr>
                     <td>Jenis Item</td>
-                    <td id="jns-item"></td>
+                    <td id="jenis-item"></td>
                 </tr>
                  <tr>
                     <td>Ukuran</td>
@@ -62,7 +63,11 @@
                 </tr>
                  <tr>
                     <td>Keterangan</td>
-                    <td id="ket"></td>
+                    <td id="keterangan"></td>
+                </tr>
+                <tr>
+                    <td>Status</td>
+                    <td id="status"></td>
                 </tr>
             </table>
         </div>

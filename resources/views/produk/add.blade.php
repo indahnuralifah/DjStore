@@ -27,7 +27,7 @@
             <div class="item form-group">
             <label for="password" class="control-label col-md-3">Harga</label>
             <div class="col-md-6 col-sm-6 col-xs-12">
-            <input id="harga" name="harga" class="form-control col-md-7 col-xs-12" type="text" size="12" maxlength="12" onkeypress="return isNumberKey(event)" required>
+            <input id="harga" name="harga" class="form-control col-md-7 col-xs-12" type="number" size="12" maxlength="12" onkeypress="return isNumberKey(event)" required>
              </div>
             </div>    
 

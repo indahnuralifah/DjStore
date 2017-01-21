@@ -37,7 +37,7 @@
                 <div class="box">
                     <div class="container">
                         <div class="col-md-12">
-                            <h2>Terbaru</h2>
+                            <h2>New</h2>
                         </div>
                     </div>
                 </div>

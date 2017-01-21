@@ -1,36 +1,32 @@
 <?php $__env->startSection('content'); ?>
 
-
     <div id="all">
 
         <div id="content">
             <div class="container">
 
                 <div class="col-md-12">
-
-                                <!-- /.text -->
                             </div>
-                            <!-- /.product -->
                         </div>
 
  <div class="row products">
                     <?php foreach($data2 as $key => $produk): ?>
 
                       
-    <div class="box">
+   <!--  <div class="box"> -->
         <div class="product">
                            <div class="flip-container">
                                     <div class="flipper">
                                         <div class="front">
                                             <a href="detail.html">
-                                                <img src="<?php echo e(url('gambar/'.$produk->Gambar)); ?>" alt="" class="img-responsive">
+                                                <img src="<?php echo e(url('gambar/'.$produk->gambar)); ?>" alt="" class="img-responsive">
                                             </a>
                                         </div>
                                         
                                     </div>
                                 </div>
                                 <a href="detail.html" class="invisible">
-                                    <img src="<?php echo e(url('gambar/'.$produk->Gambar)); ?>" alt="" class="img-responsive">
+                                    <img src="<?php echo e(url('gambar/'.$produk->ambar)); ?>" alt="" class="img-responsive">
                                 </a>
                                 <div class="text">
                                     <h3><?php echo e($produk->nama_barang); ?></h3>
@@ -43,7 +39,7 @@
                             </div>
                             <!-- /.product -->
                         </div>
-            </div>
+           <!--  </div> -->
 
                         <?php endforeach; ?>
 <?php $__env->stopSection(); ?>

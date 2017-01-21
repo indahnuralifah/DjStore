@@ -57,18 +57,18 @@ class DracoController extends Controller {
 	public function store()
 	{
 		$post = new Custom;
-		$post->nama_pembeli = Input::get('nama_pembeli');
-		$post->no_hp = Input::get('no_hp');
-		$post->email = Input::get('email');
-		$post->alamat = Input::get('alamat');
-		$post->nama_barang = Input::get('nama_barang');
-		$post->jenis_barang = Input::get('jenis_barang');
-		$post->warna = Input::get('warna');
-		$post->ukuran = Input::get('ukuran');
-		$post->jumlah_barang = Input::get('jumlah_barang');
-		$post->keterangan = Input::get('keterangan');
+		$post->nama_pembeli = \Input::get('nama_pembeli');
+		$post->no_hp = \Input::get('no_hp');
+		$post->email = \Input::get('email');
+		$post->alamat = \Input::get('alamat');
+		$post->nama_barang = \Input::get('nama_barang');
+		$post->jenis_barang = \Input::get('jenis_barang');
+		$post->warna = \Input::get('warna');
+		$post->ukuran = \Input::get('ukuran');
+		$post->jumlah_barang = \Input::get('jumlah_barang');
+		$post->keterangan = \Input::get('keterangan');
 		$post->save();
-		// return redirect(url('custom/add'));
+		return redirect(url('custom/add'));
 	}
 
 	/**
@@ -285,4 +285,10 @@ class DracoController extends Controller {
     	$r->session()->forget('cart');
     	return redirect('/');
     }
+    public function view_pembelian()
+    {
+    	$data = array('data'=>Pembelian::all());
+		return view('pembelian.add')->with($data);
+	}
+    
 }

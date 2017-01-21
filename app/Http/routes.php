@@ -15,20 +15,10 @@ Route::get('/', 'WelcomeController@index');
 
 Route::get('/', 'HomeController@index');
 
-Route::controllers([
-	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
-]);
-
-// Route::get('/', [
-//    'as' => 'index', 'uses' => 'HomeController@index'
-//  ]);
-// Route::get('register', [
-//    'as' => 'register', 'uses' => 'SimpleauthController@register'
-//  ]);
-
-
-
+// Route::controllers([
+// 	'auth' => 'Auth\AuthController',
+// 	'password' => 'Auth\PasswordController',
+// ]);
 
 //ADMIN//
 Route::get('admin', function () {
@@ -37,13 +27,8 @@ Route::get('admin', function () {
 
 
 //CUSTOM//
-Route::get('custom/all', 'DracoController@index');
-Route::get('custom/add', 'DracoController@create');
-Route::post('custom/save', 'DracoController@store');
-Route::get('custom/show', 'DracoController@show');
-Route::get('custom/edit/{id}', 'DracoController@edit');
-Route::get('custom/delete/{id}', 'DracoController@destroy');
-Route::post('custom/update','DracoController@update');
+Route::get('custom/add', 'UserController@getPesan');
+Route::post('custom/store', 'PemesananController@submit');
 
 //CEK ORDER//
 Route::get('order', 'OrderController@getOrder');
@@ -99,7 +84,14 @@ Route::post('stok/save', 'DracoController@get_Stok');
 Route::get('stok/show', 'DracoController@view_Obat');
 Route::get('stok/{masterproduk}','DracoController@add_stok2');
 
-Route::get('/pembelian', 'DracoController@view_pembelian');
+//PEMBELIAN
+Route::get('pembelian/add ', 'DracoController@view_pembelian');
+Route::group(['prefix'=>'admin'], function(){
+		Route::get('pembelian', 'PembelianController@getpembelian');
+		Route::get('pembelian/{id}/reject', 'PembelianController@update_reject');
+		Route::get('pembelian/{id}/accept','PembelianController@update_accept');
+		Route::get('pembelian/{id}/destroy','PembelianController@destroy');
+});
 
 
 Route::get('addtocart/{id}','DracoController@addtocart');
@@ -119,4 +111,8 @@ Route::get('/gambar/{filename}',
 
 	return $response;
 });	
+Route::get('auth/login','Auth\AuthController@getLogin');
+Route::post('auth/login','Auth\AuthController@postLogin');
+Route::get('auth/logout','Auth\AuthController@getLogout');
+Route::get('input/user','TestController@TestInput');	
 

@@ -4,7 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
-use App\Custom;
+use App\Pemesanan;
 
 class OrderController extends Controller {
 
@@ -20,9 +20,9 @@ class OrderController extends Controller {
 
 	public function checkOrder(Request $r)
 	{
-		$order = Custom::where('no_pesanan',$r->input('no_pesanan'))->first();
+		$order = Pemesanan::where('no_pesanan',$r->input('no_pesanan'))->first();
 		
-		if (count($order)==0) {
+		if (count($order)==0) {	
 			$success = false;
 			return response()->json(compact('success'));
 		}
