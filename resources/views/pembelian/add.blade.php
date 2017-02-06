@@ -2,19 +2,21 @@
 @section('content')
 
 <script type="text/javascript">
-  function showData(no_pesanan,nama_pembeli,no_hp,email,alamat,nama_barang,jenis_barang,warna,ukuran,keterangan,status) {
-                        $('#no-pesanan').html(data.order.no_pesanan);
-                        $('#nama-pesan').html(data.order.nama_pembeli);
-                        $('#telp-pesan').html(data.order.no_hp);
-                        $('#email').html(data.order.email);
-                        $('#alamat-pesan').html(data.order.alamat);
-                        $('#nama-barang').html(data.order.nama_barang);
-                        $('#jenis-barang').html(data.order.jenis_barang);
-                        $('#warna').html(data.order.warna);
-                        $('#ukuran').html(data.order.ukuran);
-                        $('#jumlah-barang').html(data.order.jumlah_barang);
-                        $('#keterangan').html(data.order.keterangan);
-                        $('#status').html(data.order.status);
+  function showData(no_pesanan,nama_pembeli,no_hp,email,alamat,nama_barang,jenis_barang,warna,ukuran,jumlah_barang,keterangan,status, foto) {
+ 
+                        $('#no-pesanan').html(no_pesanan);
+                        $('#nama-pesan').html(nama_pembeli);
+                        $('#telp-pesan').html(no_hp);
+                        $('#email').html(email);
+                        $('#alamat-pesan').html(alamat);
+                        $('#nama-barang').html(nama_barang);
+                        $('#jenis-barang').html(jenis_barang);
+                        $('#warna').html(warna);
+                        $('#ukuran').html(ukuran);
+                        $('#jumlah-barang').html(jumlah_barang);
+                        $('#about').html(keterangan);
+                        $('#state').html(status);
+                        $('#gambar-pesan').html(foto);
   }
 </script>
 
@@ -43,7 +45,7 @@
                     <tr>
                       <td><?php echo $i; $i++; ?></td>
                       <td>
-                          <a href="#" data-toggle="modal" data-target="#detail" style="text-decoration: none;" onclick="showData('{{ $pesanan->no_pesanan }}','{{ $pesanan->nama_pembeli }}','{{ $pesanan->no_hp }}','{{ $pesanan->email }}','{{ $pesanan->alamat }}','{{ $pesanan->nama_barang }}','{{ $pesanan->jenis_barang }}','{{ $pesanan->warna }}','{{ $pesanan->ukuran }}','{{ $pesanan->jumlah_barang }}','{{ $pesanan->keterangan }}')">{{$pesanan->nama_pembeli}}</a>
+                          <a href="#" data-toggle="modal" data-target="#detail" style="text-decoration: none;" onclick="showData('{{ $pesanan->no_pesanan }}','{{ $pesanan->nama_pembeli }}','{{ $pesanan->no_hp }}','{{ $pesanan->email }}','{{ $pesanan->alamat }}','{{ $pesanan->nama_barang }}','{{ $pesanan->jenis_barang }}','{{ $pesanan->warna }}','{{ $pesanan->ukuran }}','{{ $pesanan->jumlah_barang }}','{{ $pesanan->keterangan }}', '{{ $pesanan->status }}', '{{ $pesanan->foto }}')">{{$pesanan->nama_pembeli}}</a>
                       </td>
                       <td>{{$pesanan->no_hp}}</td>
                       <td>{{$pesanan->no_pesanan}}</td>
@@ -59,10 +61,10 @@
                       @endif
                       </td>
                       <td>
-                      <a href="/admin/pesanan/{{$pesanan->id}}/destroy" onclick="return confirm('Apakah anda yakin ingin menyetujui pesanan?')" class="btn btn-primary">Hapus</a>
+                      <a href="/admin/pembelian/{{$pesanan->id}}/destroy" onclick="return confirm('Apakah anda yakin ingin menyetujui pesanan?')" class="btn btn-primary">Hapus</a>
                         @if($pesanan->status=='pending')
-                      <a href="/admin/pesanan/{{$pesanan->id}}/reject" onclick="return confirm('Apakah anda yakin ingin menolak pesanan?')" class="btn btn-danger">Tolak</a>
-                      <a href="/admin/pesanan/{{$pesanan->id}}/accept" onclick="return confirm('Apakah anda yakin ingin menyetujui pesanan?')" class="btn btn-primary">Terima</a>
+                      <a href="/admin/pembelian/{{$pesanan->id}}/reject" onclick="return confirm('Apakah anda yakin ingin menolak pesanan?')" class="btn btn-danger">Tolak</a>
+                      <a href="/admin/pembelian/{{$pesanan->id}}/accept" onclick="return confirm('Apakah anda yakin ingin menyetujui pesanan?')" class="btn btn-primary">Terima</a>
 
                       @else
                       @endif
@@ -99,7 +101,7 @@
                     <td>Email</td>
                     <td id="email"></td>
                 </tr>
-                <tr>
+                  <tr>
                     <td>Alamat</td>
                     <td id="alamat-pesan"></td>
                 </tr>
@@ -115,7 +117,7 @@
                     <td>Warna</td>
                     <td id="warna"></td>
                 </tr>
-                tr>
+                <tr>
                     <td>Ukuran</td>
                     <td id="ukuran"></td>
                 </tr>
@@ -125,11 +127,11 @@
                 </tr>
                 <tr>
                     <td>Keterangan</td>
-                    <td id="keterangan"></td>
+                    <td id="about"></td>
                 </tr>
                 <tr>
-                    <td>Status</td>
-                    <td id="status"></td>
+                  <td>Status</td>
+                  <td id="state"></td>
                 </tr>
             </table>
         </div>

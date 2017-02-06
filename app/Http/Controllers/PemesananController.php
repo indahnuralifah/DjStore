@@ -60,7 +60,7 @@ class PemesananController extends Controller {
 		
 		$data = new Pemesanan;
 		$data->nama_pembeli = \Input::get('nama_pembeli');
-		$data->no_hp = \Input::get('telp');
+		$data->no_hp = \Input::get('no_hp');
 		$data->email = \Input::get('email');
 		$data->alamat = \Input::get('alamat');
 		$data->nama_barang = \Input::get('nama_barang');
@@ -71,7 +71,6 @@ class PemesananController extends Controller {
 		$data->keterangan = \Input::get('keterangan');
 		$data->no_pesanan = str_random(8);
 		$data->status = 'pending';
-
 		$email = Input::get('email');
 		$subject = "DJStoreJakarta";
 		$message = 
@@ -103,6 +102,17 @@ class PemesananController extends Controller {
 		} catch (Exception $e) {
 			dd($e);
 		}
+
+	}
+
+	public function save(Request $r)
+	{
+
+		$data = Pemesanan::find(Input::get('id'));
+		$data->bukti_tf = \Input::get('bukti_tf');
+		$data->status_tf = \Input::get('status_tf');
+		$data->save();
+		return redirect('/order');
 
 	}
 

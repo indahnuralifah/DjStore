@@ -1,12 +1,11 @@
 <?php $__env->startSection('content'); ?>
 <div class="right_col" role="main">
-     <div class="x_panel" style="">
-            <div class="x_title">
+<!--             <div class="x_title">
                     <h2>Form Master Produk</h2>
                     <ul class="nav navbar-right panel_toolbox"></ul>
                     <div class="clearfix"></div>
             </div>
-
+ -->
            <form action="<?php echo e(url('/masterproduk/save/')); ?>" method="POST" >     
            <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
            
@@ -28,14 +27,15 @@
             </div>
             </div>
             </div>
-            </div>
-
+            </div><br>
+      <h3 style="float:left">View Master Produk</h3>
+      <br>
 
             <div class="x_panel" style="">
                 
               
             <div class="x_title">
-                    <h2>View Master Produk</h2>
+                    
                     <ul class="nav navbar-right panel_toolbox"></ul>
                     <div class="clearfix"></div>
             </div>
@@ -57,10 +57,10 @@
                             <td><?php echo e($i++); ?></td>
                             <td><?php echo e($masterproduk->nama_produk); ?></td>
                             <td>
-                        <a href="<?php echo e(url('/edit/masterproduk/'.$masterproduk->id)); ?>"><i class="fa fa-pencil" style="font-size: 16px !important"></i> Edit</a>
+                        <a href="<?php echo e(url('/edit/masterproduk/'.$masterproduk->id)); ?>"><i class="icon wb-edit" aria-hidden="true">Edit</i></a>
                         </td>
                         <td>
-                              <a href="<?php echo e(url('/delete/masterproduk/'.$masterproduk->id)); ?>" onclick="return confirm('Delete?')"><i class="fa fa-times"></i> Delete</a>
+                              <a href="<?php echo e(url('/delete/masterproduk/'.$masterproduk->id)); ?>" onclick="return confirm('Delete?')"><i class="icon wb-trash" aria-hidden="true">Delete</i></a>
                               </td>
                          </tr> 
                           <?php endforeach; ?>                     
@@ -93,6 +93,6 @@
     </div>
 
 </body>
-<?php $__env->stopSection(); ?>
 </html>
+<?php $__env->stopSection(); ?>
 <?php echo $__env->make('admin', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

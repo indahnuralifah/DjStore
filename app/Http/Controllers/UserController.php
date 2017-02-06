@@ -17,5 +17,9 @@ class UserController extends Controller {
 	{
 		return view('custom/add');
 	}
+	public function admin()
+	{
+		return view('admin');
+	}
 
 }

@@ -92,9 +92,9 @@ class ProdukController extends Controller {
 		$post->total = Input::get('total');
 
 		if(Input::hasFile('gambar')){
-			$gambar = date("YmdHis")
+			$gambar = date("YmdHisaves")
 			.uniqid().".".Input::file('gambar')->getClientOriginalExtension();
-			Input::file('gambar')->move(storage_path(),$gambar);
+			Input::file('gambar')->move(public_path(),$gambar);
 			$post->gambar = $gambar;
 		}
 		$post->save();

@@ -81,11 +81,7 @@
      </div>
 
   <div class="x_panel" style="">       
-            <div class="x_title">
-                    <h2>View Produk</h2>
-                    <ul class="nav navbar-right panel_toolbox"></ul>
-                    <div class="clearfix"></div>
-            </div>
+           
             <div class="x_content">
                   <table class="table table-striped responsive-utilities jambo_table bulk_action">
                             <thead>
@@ -105,17 +101,17 @@
                            <?php $i = 1; ?>
                           @foreach($b as $bb)
                         <tr>
-                            <td>{{ $i++}}</td>
+                            <td>{{ $bb->id}}</td>
                             <td>{{ $bb->nama_barang}}</td>
                             <td>{{ $bb->harga}}</td>
                             <td>{{ $bb->nama_produk}}</td>
                             <td>{{ $bb->total}}</td>
                             <td><img src="{{ url('image/'.$bb->image) }}" alt="" style="max-width:100%;height: 40px;"></td>
                             <td>
-                        <a href="{{ url('/edit/produk/'.$bb->id) }}"><i class="fa fa-pencil" style="font-size: 16px !important"></i> Edit</a>
+                         <a href="{{ url('/edit/produk/'.$masterproduk->id) }}"><i class="icon wb-edit" aria-hidden="true">Edit</i></a>
                         </td>
                         <td>
-                              <a href="{{ url('/delete/produk/'.$bb->id) }}" onclick="return confirm('Delete?')"><i class="fa fa-times"></i> Delete</a>
+                              <a href="{{ url('/delete/produk/'.$masterproduk->id) }}" onclick="return confirm('Delete?')"><i class="icon wb-trash" aria-hidden="true">Delete</i></a>
                               </td>
                          </tr> 
                           @endforeach                     

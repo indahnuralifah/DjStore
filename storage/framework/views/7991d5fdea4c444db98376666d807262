@@ -92,7 +92,7 @@
                                         <label for="password_1">Nomor Telepon</label>
                                       <!--   <input name="telp" class="form-control" id="nomor_telepon" required="" type="text" value="<?php echo e(old('telp')); ?>" data-inputmask='"mask": "9999-9999-9999"' data-mask>
                   <input type="hidden" name="hidden_phone"> -->
-                                        <input type="text" name="no_hp" class="form-control" id="no_hp">
+                                        <input type="number" name="no_hp" class="form-control" id="no_hp">
                                     </div>
                                 </div>
                             </div>

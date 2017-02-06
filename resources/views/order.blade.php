@@ -6,7 +6,6 @@
         display: none!important;
     }
 </style>
-
             <div class="box">
             <form id="form_check">
             <div class="form-group">
@@ -69,7 +68,11 @@
                     <td>Status</td>
                     <td id="status"></td>
                 </tr>
+                   
             </table>
+             <div class="box-footer collapse-right">
+                        <a href="{{url('pesan/add')}}" class="btn btn-primary navbar-btn" >Order</a>
+                    </div>
         </div>
     </div>
 @endsection

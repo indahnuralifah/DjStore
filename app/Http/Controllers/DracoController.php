@@ -10,6 +10,8 @@ use App;
 use App\MasterProduk;
 use App\Produk;
 use App\Stok;
+use App\User;
+use Auth;
 use App\Pembelian;
 
 use Illuminate\Support\Facades\Input;
@@ -287,8 +289,35 @@ class DracoController extends Controller {
     }
     public function view_pembelian()
     {
-    	$data = array('data'=>Pembelian::all());
+    	$data = array('data'=>Custom::all());
 		return view('pembelian.add')->with($data);
 	}
+	public function tryLogin(Request $r)
+    {
+        $email = $r->input('email');
+        $password = $r->input('password');
+        $checkEmail = User::where('email', $email)->first();
+        
+        // return bcrypt("okebanget");
+        if (count($checkEmail) == 0) {
+            // kalo error
+            $r->session()->put('error', 'Email tidak ditemukan!');
+            // echo session()->get('error');
+            return redirect(url('/'));
+        }
+        else {
+            // kalo password cocok
+            if (\Auth::attempt(['email' => $email, 'password' => $password])) {
+                // Authentication passed...
+                return redirect(url('/admin'));
+            }
+            else {
+                // kalo error
+                $r->session()->put('error', 'Password tidak cocok!');
+                return redirect(url('/'));
+            }
+        }
+	}
+	
     
 }

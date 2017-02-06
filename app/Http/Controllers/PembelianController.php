@@ -2,16 +2,17 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
-use  App\Pembelian;
+use App\Pembelian;
+use  App\data;
+use  App\Custom;
 use Illuminate\Http\Request;
 
 class PembelianController extends Controller {
 
-	public function __construct()
-	{
-		$this->middleware('auth');
-	}
+	// public function __construct()
+	// {
+	// 	$this->middleware('auth');
+	// }
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -19,27 +20,28 @@ class PembelianController extends Controller {
 	 */
 	public function getpembelian()
 	{
-		$data = Pembelian::all();
-		return view('data')->with('data', $data);
+		$data = Custom::all();
+		return view('pembelian.add',['data'=>$data]);
 	}
 
 		public function update_reject($id)
 	{
-		$pembelian = Pembelian::find($id);
-		$pembelian->status = "DITOLAK";
-		$pembelian->save();
+		$data = Custom::find($id);
+		$data->status = "DITOLAK";
+		$data->save();
 		return redirect('/admin/pembelian');
 	}
 		public function update_accept($id)
 	{
-		$pembelian = Pembelian::find($id);
-		$pembelian->status = "DITERIMA";
-		$pembelian->save();
+		$data = Custom::find($id);
+		// dd($data);
+		$data->status = "DITERIMA";
+		$data->save();
 		return redirect('/admin/pembelian');
 	}
 		public function destroy($id){
-			$pembelian = Pembelian::find($id);
-			$pembelian->delete();
+			$data = Custom::find($id);
+			$data->delete();
 			return redirect('/admin/pembelian');		
 		}
 

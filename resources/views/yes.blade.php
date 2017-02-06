@@ -31,13 +31,13 @@
 
     <div class="container body">
 
-        <div class="main_container" >
+        <div class="main_container">
 
             <div class="col-md-3 left_col">
                 <div class="left_col scroll-view">
 
                     <div class="navbar nav_title" style="border: 0;">
-                        <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>DJStore Admin</span></a>
+                        <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Admin DJStore</span></a>
                     </div>
                     <div class="clearfix"></div>
 
@@ -46,8 +46,7 @@
                         <div class="menu_section">
                             
                             <ul class="nav side-menu">
-                                
-                                <li><a href="{{ url('admin')}}"><i class="fa fa-home"></i>  Home</a>
+                               <li><a href="{{ url('admin')}}"><i class="fa fa-home"></i>  Home</a>
                                     <ul class="nav child_menu" style="display: none">
                                     </ul>
                                 </li>
@@ -63,7 +62,7 @@
                                 </li>
 
 
-                               <li><a href="{{ url('stok/add')}}"><i class="fa fa-edit"></i> Stok Data Obat </a>
+                               <li><a href="{{ url('stok/add')}}"><i class="fa fa-edit"></i> Stok Data Item </a>
                                     <ul class="nav child_menu" style="display: none">
                                         
                                     </ul>
@@ -72,7 +71,7 @@
                                     <ul class="nav child_menu" style="display: none">
                                     </ul>
                                 </li>
-                                <li><a href="{{ url('pembelian')}}"><i class="fa fa-table"></i> Pembelian </a>
+                                <li><a href="{{ url('pembelian/add')}}"><i class="fa fa-table"></i> Pemesanan </a>
                                     <ul class="nav child_menu" style="display: none">
                                     </ul>
                                 </li>
@@ -107,40 +106,32 @@
 
                 <div class="nav_menu">
                     <nav class="" role="navigation">
-                        <!-- <div class="nav toggle">
-                            <a id="menu_toggle"><i class="fa fa-bars"></i></a>
-                        </div> -->
+                        <div class="nav toggle">
+                           
+                        </div>
 
                         <ul class="nav navbar-nav navbar-right">
-                            
-
+ 
                             <li role="presentation" class="dropdown">
-                                
-                                <ul id="menu1" class="dropdown-menu list-unstyled msg_list animated fadeInDown" role="menu"><!--  -->
-
+                                <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa fa-user">Logout</i>
+                                   
+                                </a>
+                                <ul id="menu1" class="dropdown-menu list-unstyled msg_list animated fadeInDown" role="menu">
+                                </ul>
+                            </li>
                         </ul>
                     </nav>
                 </div>
 
             </div>
-            <!-- /top navigation -->
+           
 @yield('content')   
-            <!-- page content -->
-            <div class="right_col" role="main">
 
-                    </div>
-
-                </div>
-
-                <!-- footer content -->
-
-                <!-- /footer content -->
-            </div>
-            <!-- /page content -->
-
-        </div>
-
-    </div>
+            
+                </div> 
+            </div> 
+        
 
     <div id="custom_notifications" class="custom-notifications dsp_none">
         <ul class="list-unstyled notifications clearfix" data-tabbed_notifications="notif-group">
@@ -181,14 +172,6 @@
     <script type="text/javascript" src="{{ url ('assets/js/flot/curvedLines.js')}}"></script>
     <script type="text/javascript" src="{{ url ('assets/js/flot/jquery.flot.resize.js')}}"></script>
     <script>
-     function isNumberKey(evt)
-{
-var charCode = (evt.which) ? evt.which : event.keyCode
-if (charCode > 31 && (charCode < 48 || charCode > 57))
-
-return false;
-return true;
-}
         $(document).ready(function () {
             // [17, 74, 6, 39, 20, 85, 7]
             //[82, 23, 66, 9, 99, 6, 2]
@@ -254,12 +237,7 @@ return true;
     <script type="text/javascript" src="{{ url('assets/js/maps/gdp-data.js')}}"></script>
     <script type="text/javascript" src="{{ url('assets/js/maps/jquery-jvectormap-world-mill-en.js')}}"></script>
     <script type="text/javascript" src="{{ url('assets/js/maps/jquery-jvectormap-us-aea-en.js')}}"></script>
-    <script src="{{url('/js/jquery.mask.min.js')}}"></script>
-<script type="text/javascript">
-     $(document).ready(function(){
-    $('.money').mask('000.000.000.000.000', {reverse: true});
-    });
-
+    <script>
         $(function () {
             $('#world-map-gdp').vectorMap({
                 map: 'world_mill_en',

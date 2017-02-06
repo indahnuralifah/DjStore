@@ -1,13 +1,12 @@
 @extends('admin')
 @section('content')
 <div class="right_col" role="main">
-     <div class="x_panel" style="">
-            <div class="x_title">
+<!--             <div class="x_title">
                     <h2>Form Master Produk</h2>
                     <ul class="nav navbar-right panel_toolbox"></ul>
                     <div class="clearfix"></div>
             </div>
-
+ -->
            <form action="{{ url('/masterproduk/save/') }}" method="POST" >     
            <input type="hidden" name="_token" value="{{ csrf_token() }}">
            
@@ -29,14 +28,15 @@
             </div>
             </div>
             </div>
-            </div>
-
+            </div><br>
+      <h3 style="float:left">View Master Produk</h3>
+      <br>
 
             <div class="x_panel" style="">
                 
               
             <div class="x_title">
-                    <h2>View Master Produk</h2>
+                    
                     <ul class="nav navbar-right panel_toolbox"></ul>
                     <div class="clearfix"></div>
             </div>
@@ -58,10 +58,10 @@
                             <td>{{ $i++}}</td>
                             <td>{{ $masterproduk->nama_produk}}</td>
                             <td>
-                        <a href="{{ url('/edit/masterproduk/'.$masterproduk->id) }}"><i class="fa fa-pencil" style="font-size: 16px !important"></i> Edit</a>
+                        <a href="{{ url('/edit/masterproduk/'.$masterproduk->id) }}"><i class="icon wb-edit" aria-hidden="true">Edit</i></a>
                         </td>
                         <td>
-                              <a href="{{ url('/delete/masterproduk/'.$masterproduk->id) }}" onclick="return confirm('Delete?')"><i class="fa fa-times"></i> Delete</a>
+                              <a href="{{ url('/delete/masterproduk/'.$masterproduk->id) }}" onclick="return confirm('Delete?')"><i class="icon wb-trash" aria-hidden="true">Delete</i></a>
                               </td>
                          </tr> 
                           @endforeach                     
@@ -94,5 +94,5 @@
     </div>
 
 </body>
-@endsection
 </html>
+@endsection

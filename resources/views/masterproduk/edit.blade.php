@@ -34,12 +34,7 @@
 
             <div class="x_panel" style="">
                 
-              
-            <div class="x_title">
-                    <h2>View Master Produk</h2>
-                    <ul class="nav navbar-right panel_toolbox"></ul>
-                    <div class="clearfix"></div>
-            </div>
+           
             <div class="x_content">
                   <table class="table table-striped responsive-utilities jambo_table bulk_action">
                             <thead>
@@ -57,10 +52,10 @@
                             <td>{{ $masterproduk->id}}</td>
                             <td>{{ $masterproduk->nama_produk}}</td>
                             <td>
-                        <a href="{{ url('/edit/masterproduk/'.$masterproduk->id) }}"><i class="fa fa-pencil" style="font-size: 16px !important"></i> Edit</a>
+                        <a href="{{ url('/edit/masterproduk/'.$masterproduk->id) }}"><i class="icon wb-edit" aria-hidden="true">Edit</i></a>
                         </td>
                         <td>
-                              <a href="{{ url('/delete/masterproduk/'.$masterproduk->id) }}" onclick="return confirm('Delete?')"><i class="fa fa-times"></i> Delete</a>
+                              <a href="{{ url('/delete/masterproduk/'.$masterproduk->id) }}" onclick="return confirm('Delete?')"><i class="icon wb-trash" aria-hidden="true">Delete</i></a>
                               </td>
                          </tr> 
                           @endforeach                     
@@ -93,5 +88,5 @@
     </div>
 
 </body>
-@endsection
 </html>
+@endsection

@@ -21,7 +21,6 @@ h1 {
 #top {
   background: #fff;
   padding: 10px 0;
-   color: #2c3e50;
 }
 #top .offer {
   color: #fff;
@@ -47,9 +46,8 @@ h1 {
   padding-top: 5px;
   margin: 0;
   text-align: right;
-  font-size: 16px;
+  font-size: 12px;
   list-style: none;
-
 }
 @media (max-width: 991px) {
   #top ul.menu {
@@ -60,7 +58,7 @@ h1 {
   display: inline-block;
 }
 #top ul.menu > li a {
-  color: #2c3e50;;
+  color: #2c3e50;
 }
 #top ul.menu > li + li:before {
   content: "|\00a0";
@@ -71,7 +69,7 @@ h1 {
   color: #999999;
 }
 #top #login-modal .modal-header {
-  background: #4fbfa8;
+  background: #2c3e50;
 }
 #top #login-modal .modal-header h4 {
   color: #fff;
@@ -119,10 +117,7 @@ h1 {
 }
 .navbar ul.nav > li > a {
   text-transform: uppercase;
-  text-transform: uppercase;
-    font-size: 20px;
-    font-weight: 100;
-    text-align: center;
+  font-weight: bold;
 }
 .navbar #search {
   clear: both;
@@ -155,10 +150,9 @@ h1 {
 #hot h2 {
   text-transform: uppercase;
   font-size: 36px;
-  color: #34495e;
+  color: #4fbfa8;
   font-weight: 100;
   text-align: center;
-  margin-left: -100px;
 }
 #hot .product-slider {
   margin-bottom: 20px;
@@ -255,18 +249,17 @@ h1 {
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
 }
 .box {
-  background: #F5F5F5;
-  margin: 0 0 30px;
-  margin-left: 100px;
+  background: #f0f0f0;
+/*  margin: 0 0 30px;*/
+  margin-left: 120px; 
+  border: solid 2px #e6e6e6;
   width: 1100px;
-  border: solid 1px #e6e6e6;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  padding: 5px;
+  padding: 22px;
   -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
-  margin-left: 125px;
 }
 .box .box-header {
   background: #f7f7f7;
@@ -283,9 +276,11 @@ h1 {
   clear: both;
 }
 .box .box-footer {
-  background: #f7f7f7;
-  margin: 30px -20px -20px;
-  padding: 20px;
+  background: #f0f0f0;
+/*  margin: 30px -20px -20px;*/
+  padding: 5px;
+  margin-left: -2px;
+  margin-top: -10px;
   border-top: solid 1px #eeeeee;
 }
 .box .box-footer:before,
@@ -1152,7 +1147,6 @@ h1 {
   font-size: 18px;
   line-height: 20px;
   height: 70px;
-  margin-left: -100px;
 }
 .navbar-brand:hover,
 .navbar-brand:focus {
@@ -1269,8 +1263,6 @@ h1 {
 }
 .navbar-default .navbar-nav > li > a {
   color: #fff;
-   font-size: 25px;
- 
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
@@ -1281,11 +1273,7 @@ h1 {
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
   color: #fff;
-  background-color: #2c3e50;
-  text-transform: uppercase;
-    font-size: 20px;
-    font-weight: 200;
-    text-align: center;
+  background-color: #2c3e50 ;
 }
 .navbar-default .navbar-nav > .disabled > a,
 .navbar-default .navbar-nav > .disabled > a:hover,
@@ -1295,6 +1283,7 @@ h1 {
 }
 .navbar-default .navbar-toggle {
   border-color: #dddddd;
+  color: #fff;
 }
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
@@ -1309,8 +1298,8 @@ h1 {
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
-  background-color: #80cbc4;
-  color: #555555;
+  background-color: #fff;
+  color: #2c3e50;
 }
 @media (max-width: 767px) {
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {
@@ -1346,15 +1335,11 @@ body {
   font-size: 14px;
   line-height: 1.42857143;
   color: #333333;
-  background-color: #F5F5F5;
+  background-color: #f0f0f0;
 }
 a {
-  color: #555;
+  color: #2c3e50;
   text-decoration: none;
-  text-transform: uppercase;
-  font-weight: 300;
-  position: static;
-  font-size: 15px;
 }
 a:hover,
 a:focus {
@@ -1405,19 +1390,19 @@ hr {
   border-radius: 3px;
 }
 .btn-primary {
-  color: #ffffff;
+  color: #fff;
   background-color: #2c3e50;
-  border-color: #fff;
-  margin-left: 100px;
+  border-color: #2c3e50;
 
+}
 .btn-primary:hover,
 .btn-primary:focus,
 .btn-primary:active,
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
-  color: #ffffff;
-  background-color: #3da892;
-  border-color: #318675;
+  color: #2c3e50;
+  background-color: #fff;
+  border-color: #2c3e50;
 }
 .btn-primary:active,
 .btn-primary.active,

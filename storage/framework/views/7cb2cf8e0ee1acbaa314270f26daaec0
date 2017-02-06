@@ -34,13 +34,13 @@
  _________________________________________________________ -->
   <div id="hot">
 
-                <div class="box">
+               <!--  <div class="box">
                     <div class="container">
                         <div class="col-md-12">
                             <h2>New</h2>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <div class="container">
                     <div class="product-slider">
                        <?php foreach($data as $key): ?>
@@ -74,7 +74,7 @@
                             </div>
                             <!-- /.product -->
                         </div>
-<?php endforeach; ?>
+                        <?php endforeach; ?>
                         <div class="item">
                             <div class="product">
                                 <div class="flip-container">
@@ -289,19 +289,20 @@
                         <div class="row">
                             <div class="col-sm-4">
                                 <h3><i class="fa fa-map-marker"></i> Address</h3>
-                                <p>13/25 New Avenue
-                                    <br>New Heaven
-                                    <br>45Y 73J
-                                    <br>England
+                                <p>Jalan Mayjend Sutoyo
+                                    <br>Jalan smea 6
+                                    <br>RT 005/09
+                                    <br>Cawang
                                     <br>
-                                    <strong>Great Britain</strong>
+                                    <strong>Jakarta Timur</strong>
                                 </p>
                             </div>
                             <!-- /.col-sm-4 -->
                             <div class="col-sm-4">
                                 <h3><i class="fa fa-phone"></i> Call center</h3>
                                 <p class="text-muted">This number is toll free if calling from Great Britain otherwise we advise you to use the electronic form of communication.</p>
-                                <p><strong>+33 555 444 333</strong>
+                                <p><strong>021 - 80882270</strong>
+                                or <strong>085691044904</strong>
                                 </p>
                             </div>
                             <!-- /.col-sm-4 -->
@@ -309,9 +310,11 @@
                                 <h3><i class="fa fa-envelope"></i> Electronic support</h3>
                                 <p class="text-muted">Please feel free to write an email to us or to use our electronic ticketing system.</p>
                                 <ul>
-                                    <li><strong><a href="mailto:">info@fakeemail.com</a></strong>
+                                    <li><strong><a href="mailto:">djstore@gmail.com</a></strong>
                                     </li>
-                                    <li><strong><a href="#">Ticketio</a></strong> - our ticketing support platform</li>
+                                    <li><strong><a href="mailto:">No Rekening : 5555555</a></strong>
+                                    </li>
+                                   
                                 </ul>
                             </div>
                             <!-- /.col-sm-4 -->
@@ -349,7 +352,7 @@
 
     <!-- *** SCRIPTS TO INCLUDE ***
  _________________________________________________________ -->
-</body>
+
 <?php $__env->stopSection(); ?>
-</html> 
+ 
 <?php echo $__env->make('app_home', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

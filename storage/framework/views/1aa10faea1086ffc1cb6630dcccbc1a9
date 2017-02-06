@@ -1,33 +1,32 @@
 <?php $__env->startSection('content'); ?>
 
-    <div id="all">
+<div id="all">
 
         <div id="content">
             <div class="container">
-
                 <div class="col-md-12">
-                            </div>
-                        </div>
+                    <div class="row products">
+                        <div class="col-md-3 col-sm-4">
+                     <?php foreach($data2 as $key => $produk): ?>
 
- <div class="row products">
-                    <?php foreach($data2 as $key => $produk): ?>
-
-                      
-   <!--  <div class="box"> -->
-        <div class="product">
-                           <div class="flip-container">
+                            <div class="product">
+                                <div class="flip-container">
                                     <div class="flipper">
                                         <div class="front">
+                                             <a href="detail.html">
+                                                <img src="<?php echo e(url('gambar/'.$produk->gambar)); ?>" alt="" class="img-responsive">
+                                            </a>
+                                        </div>
+                                        <div class="back">
                                             <a href="detail.html">
                                                 <img src="<?php echo e(url('gambar/'.$produk->gambar)); ?>" alt="" class="img-responsive">
                                             </a>
                                         </div>
-                                        
                                     </div>
                                 </div>
-                                <a href="detail.html" class="invisible">
-                                    <img src="<?php echo e(url('gambar/'.$produk->ambar)); ?>" alt="" class="img-responsive">
-                                </a>
+                               <!--  <a href="detail.html" class="invisible">
+                                    <img src="img/produt1.jpg" alt="" class="img-responsive">
+                                </a> -->
                                 <div class="text">
                                     <h3><?php echo e($produk->nama_barang); ?></h3>
                                     <p class="price">Rp. <?php echo e($produk->harga); ?></p>
@@ -39,8 +38,19 @@
                             </div>
                             <!-- /.product -->
                         </div>
-           <!--  </div> -->
 
-                        <?php endforeach; ?>
+                    </div>
+                    <!-- /.products -->
+                 <?php endforeach; ?>
+
+
+                </div>
+                <!-- /.col-md-9 -->
+            </div>
+            <!-- /.container -->
+        </div>
+
+    </div>
+
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('app_home', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

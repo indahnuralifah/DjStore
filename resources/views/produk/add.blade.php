@@ -111,10 +111,10 @@
                             <td>{{ $bb->total}}</td>
                             <td><img src="{{ url('gambar/'.$bb->gambar) }}" alt="" style="max-width:100%;height: 40px;"></td>
                             <td>
-                        <a href="{{ url('/edit/produk/'.$bb->id) }}"><i class="fa fa-pencil" style="font-size: 16px !important"></i> Edit</a>
+                        <a href="{{ url('/edit/produk/'.$bb->id) }}"><i class="icon wb-edit" aria-hidden="true">Edit</i></a>
                         </td>
                         <td>
-                              <a href="{{ url('/delete/produk/'.$bb->id) }}" onclick="return confirm('Delete?')"><i class="fa fa-times"></i> Delete</a>
+                              <a href="{{ url('/delete/produk/'.$bb->id) }}" onclick="return confirm('Delete?')"><i class="icon wb-trash" aria-hidden="true">Delete</i></a>
                               </td>
                          </tr> 
                           @endforeach                     

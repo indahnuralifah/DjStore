@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+// Route::get('/', 'WelcomeController@index');
 
 Route::get('/', 'HomeController@index');
+
 
 // Route::controllers([
 // 	'auth' => 'Auth\AuthController',
@@ -21,14 +22,17 @@ Route::get('/', 'HomeController@index');
 // ]);
 
 //ADMIN//
-Route::get('admin', function () {
-	return view('admin');
+// Route::get('admin', function () {
+// 	return view('admin');
+// });
+Route::get('auth/login', function() {
+	return redirect(url('/'));
 });
-
-
+Route::get('auth/logout','Auth\AuthController@getLogout');
 //CUSTOM//
 Route::get('custom/add', 'UserController@getPesan');
 Route::post('custom/store', 'PemesananController@submit');
+Route::post('custom/save', 'PemesananController@save');
 
 //CEK ORDER//
 Route::get('order', 'OrderController@getOrder');
@@ -62,20 +66,7 @@ Route::post('produk/save', 'ProdukController@store');
 Route::get('/delete/produk/{id}','ProdukController@destroy');
 Route::get('/edit/produk/{id}','ProdukController@edit');
 Route::post('produk/update','ProdukController@update');
-Route::get('/gambar/{filename}',
-	function ($filename)
-
-	{
-		$path = storage_path() . '/' . $filename;
-		$file = File::get($path);
-		$type = File::mimeType($path);
-
-		$response = Response::make($file, 200);
-		$response->header("content-Type", $type);
-
-		return $response;
-	});
-
+	
 
 //STOK BARANG
 Route::get('stok/all', 'DracoController@view_Stok');
@@ -86,7 +77,8 @@ Route::get('stok/{masterproduk}','DracoController@add_stok2');
 
 //PEMBELIAN
 Route::get('pembelian/add ', 'DracoController@view_pembelian');
-Route::group(['prefix'=>'admin'], function(){
+Route::group(['prefix'=>'admin', 'middleware' => ['auth']], function(){
+		Route::get('/', 'UserController@admin');
 		Route::get('pembelian', 'PembelianController@getpembelian');
 		Route::get('pembelian/{id}/reject', 'PembelianController@update_reject');
 		Route::get('pembelian/{id}/accept','PembelianController@update_accept');
@@ -111,8 +103,12 @@ Route::get('/gambar/{filename}',
 
 	return $response;
 });	
-Route::get('auth/login','Auth\AuthController@getLogin');
-Route::post('auth/login','Auth\AuthController@postLogin');
-Route::get('auth/logout','Auth\AuthController@getLogout');
-Route::get('input/user','TestController@TestInput');	
+Route::get('auth/logout','Auth\AuthController@getLogout');	
+Route::post('/trylogin', ['as'=>'login','uses'=>'DracoController@tryLogin']);
 
+//PESAN
+Route::get('pesan/add','PesanController@index');
+Route::post('pesan/save', 'PesanController@store');
+Route::get('/delete/pesan/{id}','PesanController@destroy');
+Route::get('/edit/pesan/{id}','PesanController@edit');
+Route::post('pesan/update','PesanController@update');

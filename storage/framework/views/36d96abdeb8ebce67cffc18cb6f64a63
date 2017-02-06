@@ -53,12 +53,12 @@
             <div class="col-md-6" data-animate="fadeInDown">
 
                  <a class="navbar-brand home" href="index.html" data-animate-hover="bounce">
-                    <img src="img/logo.png" alt="Obaju logo" class="hidden-xs">
-                    <img src="img/logo-small.png" alt="Obaju logo" class="visible-xs"><span class="sr-only"></span>
+                    <img src="img/logo.png" alt="Obaju logo" class="hidden-xs" style="float:left;max-width:150px;position:absolute;margin-top:-50px;margin-left:-100px">
+                    <img src="img/logo.png" alt="Obaju logo" class="visible-xs" style="float:left;max-width:150px;position:absolute;margin-top:-50px;margin-left:2px"><span class="sr-only"></span>
                 </a>
 
                 <ul class="menu">
-                    <li><a href="#" data-toggle="modal" data-target="#login-modal">Login Admin</a>
+                    <li><a href="#" data-toggle="modal" data-target="#login-modal"><i class="fa fa-sign-in"></i>Login Admin</a>
                     </li>
                    
                 </ul>
@@ -73,16 +73,18 @@
                         <h4 class="modal-title" id="Login">Admin Login</h4>
                     </div>
                     <div class="modal-body">
-                        <form action="customer-orders.html" method="post">
+
+                        <form action="<?php echo e(route('login')); ?>" method="post">
+                         <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
                             <div class="form-group">
-                                <input type="text" class="form-control" id="email-modal" placeholder="email">
+                                <input type="text" class="form-control" name="email" id="email-modal" placeholder="email">
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" id="password-modal" placeholder="password">
+                                <input type="password" class="form-control" name="password" id="password-modal" placeholder="password">
                             </div>
 
                             <p class="text-center">
-                                <button class="btn btn-primary"><i class="fa fa-sign-in"></i> Log in</button>
+                                <b></b><button class="btn btn-primary"><i class="fa fa-sign-in"></i> Log in</button>
                             </p>
 
                         </form>
@@ -110,10 +112,7 @@
                         <span class="sr-only">Toggle navigation</span>
                         <i class="fa fa-align-justify"></i>
                     </button>
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#search">
-                        <span class="sr-only">Toggle search</span>
-                        <i class="fa fa-search"></i>
-                    </button>
+                   
                     
                 </div>
             </div>
@@ -285,10 +284,7 @@
     <script src="<?php echo e(url('js/modernizr.js')); ?>"></script>
     <script src="<?php echo e(url('js/bootstrap-hover-dropdown.js')); ?>"></script>
     <script src="<?php echo e(url('js/owl.carousel.min.js')); ?>"></script>
-    <!-- <script src="<?php echo e(url('js/front.js')); ?>"></script>  
-    <script src="<?php echo e(asset('plugins/input-mask/jquery.inputmask.js')); ?>"></script>
-    <script src="<?php echo e(asset('plugins/input-mask/jquery.inputmask.date.extensions.js')); ?>"></script>
-    <script src="<?php echo e(asset('plugins/input-mask/jquery.inputmask.extensions.js')); ?>"></script> -->
+    <script src="<?php echo e(url('js/front.js')); ?>"></script>
     <script type="text/javascript">
     $(function(){
         $('#form_check').submit(function(e){
@@ -305,13 +301,14 @@
                         $('#telp-pesan').html(data.order.no_hp);
                         $('#email').html(data.order.email);
                         $('#alamat-pesan').html(data.order.alamat);
-                        $('#nama-item   ').html(data.order.nama_barang);
+                        $('#nama-item').html(data.order.nama_barang);
                         $('#jenis-item').html(data.order.jenis_barang);
                         $('#warna').html(data.order.warna);
                         $('#ukuran').html(data.order.ukuran);
                         $('#jumlah-barang').html(data.order.jumlah_barang);
                         $('#keterangan').html(data.order.keterangan);
                         $('#status').html(data.order.status);
+                        $('#gambar-pesan').html(data.order.foto);
                     }
 
                     else{
