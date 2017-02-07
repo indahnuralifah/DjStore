@@ -5,14 +5,6 @@
         <div id="content">
             <div class="container">
 
-                <div class="col-md-12">
-                    <ul class="breadcrumb">
-                        <li><a href="#">Home</a>
-                        </li>
-                        <li>Checkout - Payment method</li>
-                    </ul>
-                </div>
-
                 <div class="col-md-12" id="checkout">
 
                     <div class="box">
@@ -33,16 +25,13 @@
 
                             <h1>Checkout - Payment method</h1>
                             <ul class="nav nav-pills nav-justified">
-                                <li><a href="checkout1.html"><i class="fa fa-map-marker"></i><br>Address</a>
+                                <li class="active"><a href="#"><i class="fa fa-map-marker"></i><br>Address</a>
                                 </li>
-                                <li><a href="checkout2.html"><i class="fa fa-truck"></i><br>Delivery Method</a>
+                                <li class="disabled"><a href="#"><i class="fa fa-money"></i><br>Payment Method</a>
                                 </li>
-                                <li class="active"><a href="#"><i class="fa fa-money"></i><br>Payment Method</a>
-                                </li>
-                                <li class="disabled"><a href="checkout4.html"><i class="fa fa-eye"></i><br>Order Review</a>
+                                <li class="disabled"><a href="#"><i class="fa fa-eye"></i><br>Order Review</a>
                                 </li>
                             </ul>
-
                             <div class="content">
                                 <div class="row">
                                     <div class="col-sm-6">

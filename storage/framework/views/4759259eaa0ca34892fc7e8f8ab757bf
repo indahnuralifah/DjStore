@@ -63,7 +63,7 @@
                                 <div class="pull-right">
                                     
                                     <div class="box-footer collapse-right">
-                                        <a href="<?php echo e(url('pesan/add1')); ?>" class="btn btn-primary navbar-btn" >Order<i class="fa fa-chevron-right"></i></a>
+                                        <a href="<?php echo e(url('pesan/add1')); ?>" class="btn btn-primary navbar-btn" >Next<i class="fa fa-chevron-right"></i></a>
                                     </div>
                                 </div>
                             </div>

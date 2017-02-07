@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 
 use App\MasterProduk;
 use App\Pesan;
+use App\Pemesanan;
 use App;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
@@ -20,7 +21,6 @@ class PesanController extends Controller {
 	public function add()
 	{	
 		if (session('no_pesanan')) {
-			# code...
 		return view('pesan.add');
 		}
 		return redirect(url('order'));
