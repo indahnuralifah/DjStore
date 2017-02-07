@@ -107,8 +107,27 @@ Route::get('auth/logout','Auth\AuthController@getLogout');
 Route::post('/trylogin', ['as'=>'login','uses'=>'DracoController@tryLogin']);
 
 //PESAN
-Route::get('pesan/add','PesanController@index');
-Route::post('pesan/save', 'PesanController@store');
-Route::get('/delete/pesan/{id}','PesanController@destroy');
-Route::get('/edit/pesan/{id}','PesanController@edit');
-Route::post('pesan/update','PesanController@update');
+Route::get('pesan/add','PesanController@add');
+Route::get('pesan/add1','PesanController@add1');
+Route::get('pesan/add2','PesanController@add2');
+
+
+Route::get('/bukti_tf/{filename}',
+	function ($filename)
+{
+	$path = storage_path().
+	'/' . $filename;
+
+	$file = File::get($path);
+	$type = File::mimeType($path);
+
+	$response = Response::make($file, 200);
+	$response->header("Content-Type", $type);
+
+	return $response;
+});	
+
+
+// Route::get('password/{value}', function($value) {
+// 	return bcrypt($value);
+// });

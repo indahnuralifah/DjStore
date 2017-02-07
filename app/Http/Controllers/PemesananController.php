@@ -105,15 +105,23 @@ class PemesananController extends Controller {
 
 	}
 
-	public function save(Request $r)
+	public function save($no_pesanan)
 	{
 
-		$data = Pemesanan::find(Input::get('id'));
-		$data->bukti_tf = \Input::get('bukti_tf');
-		$data->status_tf = \Input::get('status_tf');
-		$data->save();
-		return redirect('/order');
+		$code_order = custom::where('no_pesanan',$no_pesanan)->first();
 
+		if(Input::hasFile('bukti_tf')){
+			$bukti_tf = date('YmdHis')
+			.uniqid()
+			."."
+			.Input::file(bukti_tf)->getClientOriginExtension();
+
+			Input::file('bukti_tf')->move(storage_path(),$bukti_tf);
+			$select_order->bukti_tf = $bukti_tf;
+		}
+
+		$select_order->update();
+		return redirect()->back();
 	}
 
 }

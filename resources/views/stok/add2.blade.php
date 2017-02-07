@@ -19,7 +19,7 @@
                 @foreach($data->produk as $key => $data2)
                     <tr>
                         <td>{{ $data2->nama_produk }}</td>
-                        <td>{{ $data2->nama_obat }}</td>
+                        <td>{{ $data2->nama_barang }}</td>
                         <td>{{ $data2->total }}</td>
                     </tr>
                 @endforeach

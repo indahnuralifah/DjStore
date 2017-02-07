@@ -324,8 +324,6 @@
                     </div>
                 </div>
             </div>
-
-
             </div>
           
 
@@ -334,10 +332,7 @@
             <div class="container">
                 <div class="col-md-6">
                     <p class="pull-left">© 2016 Fah | Template by Responsive Templates with support from Designové předměty</p>
-
                 </div>
-
-               
             </div>
         </div>
         <!-- *** COPYRIGHT END *** -->

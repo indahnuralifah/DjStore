@@ -29,6 +29,7 @@ class CreateCustomsTable extends Migration {
 			$table->string('status');
 			$table->string('bukti_tf');
 			$table->string('status_tf');
+			$table->string('harga');
 			$table->timestamps();
 		});
 	}
