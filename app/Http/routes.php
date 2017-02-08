@@ -116,7 +116,7 @@ Route::get('pesan/add1','PesanController@add1');
 Route::post('/checkout/payment/save','PesanController@checkout_payment_save');
 
 Route::get('pesan/add2','PesanController@add2');
-Route::post('/checkout/buktitf/save','PesanController@checkout_bukti_save');
+Route::post('/checkout/buktitf/save','PesanController@checkout_order_save');
 
 
 

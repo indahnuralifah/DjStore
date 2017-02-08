@@ -30,7 +30,8 @@
                 <div class="col-md-9" id="checkout">
 
                     <div class="box">
-                        <form method="post" action="checkout4.html">
+                        <form method="post" action="{{ url('checkout/buktitf/save') }}">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <h1>Order review</h1>
                             <ul class="nav nav-pills nav-justified">
                                 <li class="disabled"><a href="#"><i class="fa fa-map-marker"></i><br>Address</a>
@@ -83,7 +84,7 @@
 
                                     <div class="item form-group" style="margin-left:800px; margin-top:-10px; ">
                                     <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <input type="file" name="bukti_tf">
+                                    <input type="file" id=name="bukti_tf">
                                     </div>
                                     </div>
                                     <br>
@@ -94,12 +95,12 @@
 
                             
                                 <div class="box-footer">
-                                    
+                                    <br>
                                         <div class="pull-left">
                                             <a href="{{url('pesan/add')}}" class="btn btn-default"><i class="fa fa-chevron-left"></i>Back</a>
                                         </div>
                                         <div class="pull-right">
-                                                <a href="{{url('pesan/add2')}}" class="btn btn-default">Next<i class="fa fa-chevron-right"></i></a>
+                                                <button class="btn btn-default">Next<i class="fa fa-chevron-right"></i></button>
                                         </div>
                                 </div>
 

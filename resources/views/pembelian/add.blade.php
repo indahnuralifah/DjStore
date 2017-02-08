@@ -34,7 +34,7 @@
                   <!-- End Modal -->
 
 <script type="text/javascript">
-  function showData(no_pesanan,nama_pembeli,no_hp,email,alamat,nama_barang,jenis_barang,warna,ukuran,jumlah_barang,keterangan,status, foto,harga) {
+  function showData(no_pesanan,nama_pembeli,no_hp,email,alamat,nama_barang,jenis_barang,warna,ukuran,jumlah_barang,keterangan,status, foto,harga,bukti_tf) {
  
                         $('#no-pesanan').html(no_pesanan);
                         $('#nama-pesan').html(nama_pembeli);
@@ -50,6 +50,8 @@
                         $('#state').html(status);
                         $('#gambar-pesan').html(foto);
                         $('#harga').html(harga);
+                        $('#bukti-tf').html(bukti_tf);
+
   }
 </script>
 
@@ -78,7 +80,7 @@
                     <tr>
                       <td><?php echo $i; $i++; ?></td>
                       <td>
-                          <a href="#" data-toggle="modal" data-target="#detail" style="text-decoration: none;" onclick="showData('{{ $pesanan->no_pesanan }}','{{ $pesanan->nama_pembeli }}','{{ $pesanan->no_hp }}','{{ $pesanan->email }}','{{ $pesanan->alamat }}','{{ $pesanan->nama_barang }}','{{ $pesanan->jenis_barang }}','{{ $pesanan->warna }}','{{ $pesanan->ukuran }}','{{ $pesanan->jumlah_barang }}','{{ $pesanan->keterangan }}', '{{ $pesanan->status }}', '{{ $pesanan->foto }}', '{{ $pesanan->harga }}')">{{$pesanan->nama_pembeli}}</a>
+                          <a href="#" data-toggle="modal" data-target="#detail" style="text-decoration: none;" onclick="showData('{{ $pesanan->no_pesanan }}','{{ $pesanan->nama_pembeli }}','{{ $pesanan->no_hp }}','{{ $pesanan->email }}','{{ $pesanan->alamat }}','{{ $pesanan->nama_barang }}','{{ $pesanan->jenis_barang }}','{{ $pesanan->warna }}','{{ $pesanan->ukuran }}','{{ $pesanan->jumlah_barang }}','{{ $pesanan->keterangan }}', '{{ $pesanan->status }}', '{{ $pesanan->foto }}', '{{ $pesanan->harga }}', '{{ $pesanan->bukti_tf }}')">{{$pesanan->nama_pembeli}}</a>
                       </td>
                       <td>{{$pesanan->no_hp}}</td>
                       <td>{{$pesanan->no_pesanan}}</td>
@@ -197,8 +199,12 @@
                   <td id="state"></td>
                 </tr>
                 <tr>
-                  <td>harga</td>
+                  <td>Harga</td>
                   <td id="harga"></td>
+                </tr>
+                 <tr>
+                  <td>Bukti Transfer</td>
+                  <td id="bukti-tf"></td>
                 </tr>
             </table>
         </div>

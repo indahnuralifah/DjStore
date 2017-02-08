@@ -89,20 +89,20 @@ class PesanController extends Controller {
      
         // return redirect(url('/checkout/order/'));
         //      }
-        $code_order = custom::where('no_pesanan',$no_pesanan)->first();
 
-        if(Input::hasFile('bukti_tf')){
-            $bukti_tf = date('YmdHis')
-            .uniqid()
-            ."."
-            .Input::file('bukti_tf')->getClientOriginExtension();
+        if (session('id')) {        
+            $select_order = Pesan::find(Input::get('id'));
+            $select_order = Pesan::where('no_pesanan',$no_pesanan)->first();
 
-            Input::file('bukti_tf')->move(storage_path(),$bukti_tf);
-            $select_order->bukti_tf = $bukti_tf;
+            if(Input::hasFile('bukti_tf')){
+                $bukti_tf = date("YmdHis").uniqid().".".Input::file('bukti_tf')->getClientOriginalExtension();
+                Input::file('bukti_tf')->move(storage_path(),$bukti_tf);
+                $select_order->bukti_tf = $bukti_tf;
+            }
         }
-
-        $select_order->update();
-        return redirect()->back();
+        $select_order->save();
+        return $select_order;
+        // return redirect()->back();
     }
 	
 

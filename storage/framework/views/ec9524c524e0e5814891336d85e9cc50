@@ -33,7 +33,7 @@
                   <!-- End Modal -->
 
 <script type="text/javascript">
-  function showData(no_pesanan,nama_pembeli,no_hp,email,alamat,nama_barang,jenis_barang,warna,ukuran,jumlah_barang,keterangan,status, foto,harga) {
+  function showData(no_pesanan,nama_pembeli,no_hp,email,alamat,nama_barang,jenis_barang,warna,ukuran,jumlah_barang,keterangan,status, foto,harga,bukti_tf) {
  
                         $('#no-pesanan').html(no_pesanan);
                         $('#nama-pesan').html(nama_pembeli);
@@ -49,6 +49,8 @@
                         $('#state').html(status);
                         $('#gambar-pesan').html(foto);
                         $('#harga').html(harga);
+                        $('#bukti-tf').html(bukti_tf);
+
   }
 </script>
 
@@ -77,7 +79,7 @@
                     <tr>
                       <td><?php echo $i; $i++; ?></td>
                       <td>
-                          <a href="#" data-toggle="modal" data-target="#detail" style="text-decoration: none;" onclick="showData('<?php echo e($pesanan->no_pesanan); ?>','<?php echo e($pesanan->nama_pembeli); ?>','<?php echo e($pesanan->no_hp); ?>','<?php echo e($pesanan->email); ?>','<?php echo e($pesanan->alamat); ?>','<?php echo e($pesanan->nama_barang); ?>','<?php echo e($pesanan->jenis_barang); ?>','<?php echo e($pesanan->warna); ?>','<?php echo e($pesanan->ukuran); ?>','<?php echo e($pesanan->jumlah_barang); ?>','<?php echo e($pesanan->keterangan); ?>', '<?php echo e($pesanan->status); ?>', '<?php echo e($pesanan->foto); ?>', '<?php echo e($pesanan->harga); ?>')"><?php echo e($pesanan->nama_pembeli); ?></a>
+                          <a href="#" data-toggle="modal" data-target="#detail" style="text-decoration: none;" onclick="showData('<?php echo e($pesanan->no_pesanan); ?>','<?php echo e($pesanan->nama_pembeli); ?>','<?php echo e($pesanan->no_hp); ?>','<?php echo e($pesanan->email); ?>','<?php echo e($pesanan->alamat); ?>','<?php echo e($pesanan->nama_barang); ?>','<?php echo e($pesanan->jenis_barang); ?>','<?php echo e($pesanan->warna); ?>','<?php echo e($pesanan->ukuran); ?>','<?php echo e($pesanan->jumlah_barang); ?>','<?php echo e($pesanan->keterangan); ?>', '<?php echo e($pesanan->status); ?>', '<?php echo e($pesanan->foto); ?>', '<?php echo e($pesanan->harga); ?>', '<?php echo e($pesanan->bukti_tf); ?>')"><?php echo e($pesanan->nama_pembeli); ?></a>
                       </td>
                       <td><?php echo e($pesanan->no_hp); ?></td>
                       <td><?php echo e($pesanan->no_pesanan); ?></td>
@@ -196,8 +198,12 @@
                   <td id="state"></td>
                 </tr>
                 <tr>
-                  <td>harga</td>
+                  <td>Harga</td>
                   <td id="harga"></td>
+                </tr>
+                 <tr>
+                  <td>Bukti Transfer</td>
+                  <td id="bukti-tf"></td>
                 </tr>
             </table>
         </div>

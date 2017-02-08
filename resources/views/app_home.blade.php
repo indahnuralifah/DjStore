@@ -310,6 +310,7 @@
                         $('#status').html(data.order.status);
                         $('#gambar-pesan').html(data.order.foto);
                         $('#harga').html(data.order.harga);
+                        $('#bukti-tf').html(data.order.bukti_tf);
                            
                     }
 
