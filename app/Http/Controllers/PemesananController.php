@@ -71,6 +71,7 @@ class PemesananController extends Controller {
 		$data->keterangan = \Input::get('keterangan');
 		$data->no_pesanan = str_random(8);
 		$data->status = 'pending';
+		
 		$email = Input::get('email');
 		$subject = "DJStoreJakarta";
 		$message = 

@@ -1,8 +1,40 @@
 @extends('admin')
 @section('content')
 
+<!-- Modal -->
+          <!--         <form action="{{ url('/harga/add/') }}" method="POST" > 
+                      <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+                  <div class="modal fade modal-fade-in-scale-up" id="exampleNiftyFadeScale" aria-hidden="true"
+                  aria-labelledby="exampleModalTitle" role="dialog" tabindex="-1">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                          </button>
+                          <h4 class="modal-title">Harga</h4>
+                        </div>
+                        <div class="modal-body">
+                          <div class="item form-group">
+                            <label for="password" class="control-label col-md-3">Total Harga</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input id="password" type="number" name="harga" data-validate-length="6,8" class="form-control col-md-7 col-xs-12" required="required">
+                             </div>
+                            </div>  
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default margin-0" data-dismiss="modal">Close</button>
+                          <button type="submit" class="btn btn-primary">Save changes</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  </form> -->
+                  <!-- End Modal -->
+
 <script type="text/javascript">
-  function showData(no_pesanan,nama_pembeli,no_hp,email,alamat,nama_barang,jenis_barang,warna,ukuran,jumlah_barang,keterangan,status, foto) {
+  function showData(no_pesanan,nama_pembeli,no_hp,email,alamat,nama_barang,jenis_barang,warna,ukuran,jumlah_barang,keterangan,status, foto,harga) {
  
                         $('#no-pesanan').html(no_pesanan);
                         $('#nama-pesan').html(nama_pembeli);
@@ -17,6 +49,7 @@
                         $('#about').html(keterangan);
                         $('#state').html(status);
                         $('#gambar-pesan').html(foto);
+                         $('#harga').html(harga);
   }
 </script>
 
@@ -64,12 +97,42 @@
                       <a href="/admin/pembelian/{{$pesanan->id}}/destroy" onclick="return confirm('Apakah anda yakin ingin menyetujui pesanan?')" class="btn btn-primary">Hapus</a>
                         @if($pesanan->status=='pending')
                       <a href="/admin/pembelian/{{$pesanan->id}}/reject" onclick="return confirm('Apakah anda yakin ingin menolak pesanan?')" class="btn btn-danger">Tolak</a>
-                      <a href="/admin/pembelian/{{$pesanan->id}}/accept" onclick="return confirm('Apakah anda yakin ingin menyetujui pesanan?')" class="btn btn-primary">Terima</a>
+                      <a href="#!" class="btn btn-primary" data-target="#exampleNiftyFadeScale" data-toggle="modal">Terima</a>
 
                       @else
                       @endif
                       </td>
                     </tr>
+                            <form action="{{ url('/harga/add/') }}" method="POST" > 
+                      <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+                  <div class="modal fade modal-fade-in-scale-up" id="exampleNiftyFadeScale" aria-hidden="true"
+                  aria-labelledby="exampleModalTitle" role="dialog" tabindex="-1">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                          </button>
+                          <h4 class="modal-title">Harga</h4>
+                        </div>
+                        <div class="modal-body">
+                          <div class="item form-group">
+                            <label for="password" class="control-label col-md-3">Total Harga</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input id="password" type="number" name="harga" data-validate-length="6,8" class="form-control col-md-7 col-xs-12" required="required">
+                            <input type="hidden" name="id" value="{{$pesanan->id}}">
+                             </div>
+                            </div>  
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default margin-0" data-dismiss="modal">Close</button>
+                          <button type="submit" class="btn btn-primary">Save changes</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  </form>
                 @endforeach
                 </tbody>
           
@@ -132,6 +195,10 @@
                 <tr>
                   <td>Status</td>
                   <td id="state"></td>
+                </tr>
+                <tr>
+                  <td>harga</td>
+                  <td id="harga"></td>
                 </tr>
             </table>
         </div>

@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use App\Pembelian;
 use  App\data;
 use  App\Custom;
+use Input;
 use Illuminate\Http\Request;
 
 class PembelianController extends Controller {
@@ -39,13 +40,27 @@ class PembelianController extends Controller {
 		$data->save();
 		return redirect('/admin/pembelian');
 	}
-		public function destroy($id){
+	public function destroy($id){
 			$data = Custom::find($id);
 			$data->delete();
-			return redirect('/admin/pembelian');		
-		}
+		return redirect('/admin/pembelian');		
+	}
 
-
+	public function create()
+	{
+		$data = new \App\Custom;
+		$data->harga = Input::get('harga');
+		$data->save();
+		return redirect(url('pembelian/add'));
+	}
+	public function update()
+	{
+		$data = Custom::find(Input::get('id'));
+   		$data->harga = Input::get('harga');
+   		$data->status = "DITERIMA";
+   		$data->save();
+   		return redirect(url('/pembelian/add'));
+	}
 
 
 }

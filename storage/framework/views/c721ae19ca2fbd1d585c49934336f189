@@ -18,8 +18,7 @@
 
                     <div class="box">
                         <form method="post" action="<?php echo e(url('/checkout/order/save')); ?>" enctype="multipart/form-data">
-                        <?php echo csrf_field(); ?>
-
+                        <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
                         
                          <input type="hidden" class="form-control" name="id_user" value="<?php echo e(Auth::user()->email); ?>" required>
                          <input type="hidden" class="form-control" name="status" value="pending" required>

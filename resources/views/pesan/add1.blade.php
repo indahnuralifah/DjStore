@@ -1,28 +1,11 @@
-	@section('content')
+@extends('app_home')
+@section('content')
 
-    <div id="all">
-
-        <div id="content">
-            <div class="container">
-
-                <div class="col-md-12" id="checkout">
-
+    <div id="all"></div>
                     <div class="box">
                         <form method="post" action="{{('/checkout/payment/save')}}">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        
-                            <input type="hidden" name="id" value="{{ $data->id }}">
-                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                            <input type="hidden" name="id_user" value="{{ $data->id_user }}">
-                            <input type="hidden" name="name" value="{{ $data->name }}">
-                            <input type="hidden" name="telp" value="{{ $data->telp }}">
-                            <input type="hidden" name="address" value="{{ $data->address }}">
-                            <input type="hidden" name="state" value="{{ $data->state }}">
-                            <input type="hidden" name="country" value="{{ $data->country }}">
-                            <input type="hidden" name="email" value="{{ $data->email }}">
-                            <input type="hidden" name="delivery" value="{{ $data->delivery }}">
-
-
+                    
                             <h1>Checkout - Payment method</h1>
                             <ul class="nav nav-pills nav-justified">
                                 <li class="active"><a href="#"><i class="fa fa-map-marker"></i><br>Address</a>
@@ -32,10 +15,9 @@
                                 <li class="disabled"><a href="#"><i class="fa fa-eye"></i><br>Order Review</a>
                                 </li>
                             </ul>
-                            <div class="content">
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <div class="box payment-method">
+                                <div class="row">   
+                                    <div class="col-sm-6" >
+                                        <div class="box payment-method col-sm-3">
 
                                             <h4>Payment gateway</h4>
 
@@ -49,7 +31,7 @@
                                     </div>
 
                                     <div class="col-sm-6">
-                                        <div class="box payment-method">
+                                        <div class="box payment-method col-sm-3">
 
                                             <h4>Cash on delivery</h4>
 
@@ -64,14 +46,17 @@
                                 </div>
                                 <!-- /.row -->
 
-                            </div>
-                            <!-- /.content -->
 
-                            <div class="box-footer">
-                                
-                                <div class="box-footer collapse-right">
+                           <div class="box-footer">
+                                <div class="pull-left">
+                                    <a href="{{url('/order')}}" class="btn btn-default"><i class="fa fa-chevron-left"></i>Back to basket</a>
+                                </div>
+                                <div class="pull-right">
+                                    
+                                    <div class="box-footer collapse-right">
                                         <a href="{{url('pesan/add2')}}" class="btn btn-primary navbar-btn" >Next<i class="fa fa-chevron-right"></i></a>
                                     </div>
+                                </div>
                             </div>
                         </form>
                     </div>
@@ -86,3 +71,6 @@
             <!-- /.container -->
         </div>
         <!-- /#content -->
+    </div>
+
+@endsection

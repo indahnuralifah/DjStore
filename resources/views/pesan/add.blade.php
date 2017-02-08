@@ -3,13 +3,13 @@
 <?php
     $pesanan = \App\Pemesanan::where('no_pesanan', session()->pull('no_pesanan'))->first();
 ?>
-  <div id="all">
 
+
+             <div id="all">
                     <div class="box">
-                        <form method="post" action="{{url('/checkout/address/save')}}" enctype="multipart/form-data">
+                        <form method="post" action="{{url('/checkout/address/save/')}}" enctype="multipart/form-data">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         
-                         <input type="hidden" class="form-control" name="id_user" value="{{ Auth::user()->email }}" required>
 
                             <h1>Checkout</h1>
                             <ul class="nav nav-pills nav-justified">
@@ -56,13 +56,9 @@
                             </div>
 
 
-                            <br>
+                            
                             <div class="box-footer">
-                                <div class="pull-left">
-                                    <a href="{{url('/order')}}" class="btn btn-default"><i class="fa fa-chevron-left"></i>Back to basket</a>
-                                </div>
                                 <div class="pull-right">
-                                    
                                     <div class="box-footer collapse-right">
                                         <a href="{{url('pesan/add1')}}" class="btn btn-primary navbar-btn" >Next<i class="fa fa-chevron-right"></i></a>
                                     </div>

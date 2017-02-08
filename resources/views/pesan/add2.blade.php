@@ -1,3 +1,4 @@
+@extends('app_home')
 @section('content')
 
 
@@ -210,3 +211,5 @@
             <!-- /.container -->
         </div>
         <!-- /#content -->
+
+@endsection

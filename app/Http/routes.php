@@ -33,6 +33,8 @@ Route::get('auth/logout','Auth\AuthController@getLogout');
 Route::get('custom/add', 'UserController@getPesan');
 Route::post('custom/store', 'PemesananController@submit');
 Route::post('custom/save', 'PemesananController@save');
+Route::post('harga/add', 'PembelianController@update');
+Route::post('harga/update','MasterProdukController@update');
 
 //CEK ORDER//
 Route::get('order', 'OrderController@getOrder');
@@ -108,8 +110,21 @@ Route::post('/trylogin', ['as'=>'login','uses'=>'DracoController@tryLogin']);
 
 //PESAN
 Route::get('pesan/add','PesanController@add');
+Route::post('/checkout/address/save/{id}','PesanController@checkout_address_save');
+
 Route::get('pesan/add1','PesanController@add1');
+Route::post('/checkout/payment/save','PesanController@checkout_payment_save');
+
 Route::get('pesan/add2','PesanController@add2');
+
+
+	
+
+	// Route::get('/checkout/order/','WelcomeController@checkout_order');
+	// Route::post('updatecartorder/{id}', 'WelcomeController@updatecartorder');
+	// Route::post('/checkout/order/save','WelcomeController@checkout_order_save');
+	// Route::get('/checkout/order_review','WelcomeController@checkout_order_review');
+
 
 
 Route::get('/bukti_tf/{filename}',

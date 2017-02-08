@@ -67,6 +67,11 @@
                     <td>Status</td>
                     <td id="status"></td>
                 </tr>
+                <tr>
+                    <td>Harga</td>
+                    <td id="harga"></td>
+                </tr>
+
                    
             </table>
              <div class="box-footer collapse-right">

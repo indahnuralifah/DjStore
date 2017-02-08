@@ -309,6 +309,8 @@
                         $('#keterangan').html(data.order.keterangan);
                         $('#status').html(data.order.status);
                         $('#gambar-pesan').html(data.order.foto);
+                        $('#harga').html(data.order.harga);
+                           
                     }
 
                     else{
