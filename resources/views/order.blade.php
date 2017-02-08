@@ -75,9 +75,9 @@
 
                    
             </table>
-             <div class="box-footer collapse-right">
-                        <a href="{{url('pesan/add')}}" class="btn btn-primary navbar-btn" >Order</a>
+                    <div class="box-footer collapse-right">
+                        <a href="{{url('pesan/add')}}" class="btn btn-primary navbar-btn" >Order</a>    
                     </div>
-        </div>
+            </div>
     </div>
 @endsection

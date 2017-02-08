@@ -68,10 +68,42 @@ class PesanController extends Controller {
 
 	public function add2()
 	{	
-		return view('pesan.add2');
+		$data = Custom::all();
+        return view('pesan.add2',['data'=>$data]);
 	}
+    public function checkout_order_save()
+    {
+         //    if (session('no_pesanan')) {
+         // $foto = strtoupper(str_slug(strtoupper(Input::get('name'))))."-".date("YmdHis").uniqid().".".Input::file('gambar')->getClientOriginalExtension();
+         //    Input::file('gambar')->move(public_path(),$foto);
+         //    $post->bukti_tf = $foto;
+        // $post = new \App\Custom;
+        // if(Input::hasFile('bukti_tf')){
+        //     $bukti_tf = date("YmdHisaves")
+        //     .uniqid().".".Input::file('gambar')->getClientOriginalExtension();
+        //     Input::file('gambar')->move(public_path()."/gambar",$bukti_tf);
+        //     $post->bukti_tf = $bukti_tf;
+        // }
+        // $post->save();
 
+     
+        // return redirect(url('/checkout/order/'));
+        //      }
+        $code_order = custom::where('no_pesanan',$no_pesanan)->first();
 
+        if(Input::hasFile('bukti_tf')){
+            $bukti_tf = date('YmdHis')
+            .uniqid()
+            ."."
+            .Input::file('bukti_tf')->getClientOriginExtension();
+
+            Input::file('bukti_tf')->move(storage_path(),$bukti_tf);
+            $select_order->bukti_tf = $bukti_tf;
+        }
+
+        $select_order->update();
+        return redirect()->back();
+    }
 	
 
 }

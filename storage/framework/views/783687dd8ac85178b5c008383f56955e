@@ -74,10 +74,10 @@
 
                    
             </table>
-             <div class="box-footer collapse-right">
-                        <a href="<?php echo e(url('pesan/add')); ?>" class="btn btn-primary navbar-btn" >Order</a>
+                    <div class="box-footer collapse-right">
+                        <a href="<?php echo e(url('pesan/add')); ?>" class="btn btn-primary navbar-btn" >Order</a>    
                     </div>
-        </div>
+            </div>
     </div>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('app_home', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

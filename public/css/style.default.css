@@ -1388,6 +1388,8 @@ hr {
   font-size: 14px;
   line-height: 1.42857143;
   border-radius: 3px;
+  background: #4fbfa8;;
+  color: #fff;
 }
 .btn-primary {
   color: #fff;

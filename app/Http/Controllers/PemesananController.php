@@ -115,7 +115,7 @@ class PemesananController extends Controller {
 			$bukti_tf = date('YmdHis')
 			.uniqid()
 			."."
-			.Input::file(bukti_tf)->getClientOriginExtension();
+			.Input::file('bukti_tf')->getClientOriginExtension();
 
 			Input::file('bukti_tf')->move(storage_path(),$bukti_tf);
 			$select_order->bukti_tf = $bukti_tf;

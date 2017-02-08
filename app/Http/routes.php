@@ -116,14 +116,7 @@ Route::get('pesan/add1','PesanController@add1');
 Route::post('/checkout/payment/save','PesanController@checkout_payment_save');
 
 Route::get('pesan/add2','PesanController@add2');
-
-
-	
-
-	// Route::get('/checkout/order/','WelcomeController@checkout_order');
-	// Route::post('updatecartorder/{id}', 'WelcomeController@updatecartorder');
-	// Route::post('/checkout/order/save','WelcomeController@checkout_order_save');
-	// Route::get('/checkout/order_review','WelcomeController@checkout_order_review');
+Route::post('/checkout/buktitf/save','PesanController@checkout_bukti_save');
 
 
 

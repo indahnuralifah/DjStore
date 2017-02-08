@@ -49,7 +49,7 @@
                         $('#about').html(keterangan);
                         $('#state').html(status);
                         $('#gambar-pesan').html(foto);
-                         $('#harga').html(harga);
+                        $('#harga').html(harga);
   }
 </script>
 
@@ -78,7 +78,7 @@
                     <tr>
                       <td><?php echo $i; $i++; ?></td>
                       <td>
-                          <a href="#" data-toggle="modal" data-target="#detail" style="text-decoration: none;" onclick="showData('{{ $pesanan->no_pesanan }}','{{ $pesanan->nama_pembeli }}','{{ $pesanan->no_hp }}','{{ $pesanan->email }}','{{ $pesanan->alamat }}','{{ $pesanan->nama_barang }}','{{ $pesanan->jenis_barang }}','{{ $pesanan->warna }}','{{ $pesanan->ukuran }}','{{ $pesanan->jumlah_barang }}','{{ $pesanan->keterangan }}', '{{ $pesanan->status }}', '{{ $pesanan->foto }}')">{{$pesanan->nama_pembeli}}</a>
+                          <a href="#" data-toggle="modal" data-target="#detail" style="text-decoration: none;" onclick="showData('{{ $pesanan->no_pesanan }}','{{ $pesanan->nama_pembeli }}','{{ $pesanan->no_hp }}','{{ $pesanan->email }}','{{ $pesanan->alamat }}','{{ $pesanan->nama_barang }}','{{ $pesanan->jenis_barang }}','{{ $pesanan->warna }}','{{ $pesanan->ukuran }}','{{ $pesanan->jumlah_barang }}','{{ $pesanan->keterangan }}', '{{ $pesanan->status }}', '{{ $pesanan->foto }}', '{{ $pesanan->harga }}')">{{$pesanan->nama_pembeli}}</a>
                       </td>
                       <td>{{$pesanan->no_hp}}</td>
                       <td>{{$pesanan->no_pesanan}}</td>
@@ -126,7 +126,7 @@
                             </div>  
                         </div>
                         <div class="modal-footer">
-                          <button type="button" class="btn btn-default margin-0" data-dismiss="modal">Close</button>
+                          <button  class="btn btn-default margin-0" data-dismiss="modal">Close</button>
                           <button type="submit" class="btn btn-primary">Save changes</button>
                         </div>
                       </div>
