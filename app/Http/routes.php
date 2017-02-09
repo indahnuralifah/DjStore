@@ -82,9 +82,9 @@ Route::get('pembelian/add ', 'DracoController@view_pembelian');
 Route::group(['prefix'=>'admin', 'middleware' => ['auth']], function(){
 		Route::get('/', 'UserController@admin');
 		Route::get('pembelian', 'PembelianController@getpembelian');
-		Route::get('pembelian/{id}/reject', 'PembelianController@update_reject');
-		Route::get('pembelian/{id}/accept','PembelianController@update_accept');
-		Route::get('pembelian/{id}/destroy','PembelianController@destroy');
+		Route::get('pembelian/reject{id}', 'PembelianController@update_reject');
+		Route::get('pembelian/accept/{id}','PembelianController@update_accept');
+		Route::get('pembelian/destroy/{id}','PembelianController@destroy');
 });
 
 

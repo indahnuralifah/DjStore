@@ -96,10 +96,10 @@
                       @endif
                       </td>
                       <td>
-                      <a href="/admin/pembelian/{{$pesanan->id}}/destroy" onclick="return confirm('Apakah anda yakin ingin menyetujui pesanan?')" class="btn btn-primary">Hapus</a>
+                      <a href="{{url('/admin/pembelian/destroy/'.$pesanan->id) }}" onclick="return confirm('Apakah anda yakin ingin menyetujui pesanan?')" class="btn btn-primary">Hapus</a>
                         @if($pesanan->status=='pending')
-                      <a href="/admin/pembelian/{{$pesanan->id}}/reject" onclick="return confirm('Apakah anda yakin ingin menolak pesanan?')" class="btn btn-danger">Tolak</a>
-                      <a href="#!" class="btn btn-primary" data-target="#exampleNiftyFadeScale" data-toggle="modal">Terima</a>
+                      <a href="{{url('/admin/pembelian/reject/'.$pesanan->id) }}" onclick="return confirm('Apakah anda yakin ingin menolak pesanan?')" class="btn btn-danger">Tolak</a>
+                      <a href="!" class="btn btn-primary" data-target="#exampleNiftyFadeScale" data-toggle="modal">Terima</a>
 
                       @else
                       @endif
