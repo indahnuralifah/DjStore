@@ -119,7 +119,6 @@ Route::get('pesan/add2','PesanController@add2');
 Route::post('/checkout/buktitf/save','PesanController@checkout_order_save');
 
 
-
 Route::get('/bukti_tf/{filename}',
 	function ($filename)
 {

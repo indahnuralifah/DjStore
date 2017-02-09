@@ -21,7 +21,7 @@ class PesanController extends Controller {
 	 */
 	public function add()
 	{	
-		if (session('no_pesanan')) {
+		if (session()->get('no_pesanan')) {
 		return view('pesan.add');
 		}
 		return redirect(url('order/'));
@@ -90,9 +90,8 @@ class PesanController extends Controller {
         // return redirect(url('/checkout/order/'));
         //      }
 
-        if (session('id')) {        
-            $select_order = Pesan::find(Input::get('id'));
-            $select_order = Pesan::where('no_pesanan',$no_pesanan)->first();
+        if (session('nomor_pesanan')) {        
+            $select_order = Custom::where('no_pesanan', session()->pull('nomor_pesanan'))->first();
 
             if(Input::hasFile('bukti_tf')){
                 $bukti_tf = date("YmdHis").uniqid().".".Input::file('bukti_tf')->getClientOriginalExtension();

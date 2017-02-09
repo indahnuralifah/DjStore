@@ -28,6 +28,7 @@ class OrderController extends Controller {
 		}
 
 		session()->put('no_pesanan', $order->no_pesanan);
+		session()->put('nomor_pesanan', $order->no_pesanan);
 		$success = true;
 		return response()->json(compact('order','success'));
 	}

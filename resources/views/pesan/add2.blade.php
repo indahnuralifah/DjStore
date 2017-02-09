@@ -84,7 +84,7 @@
 
                                     <div class="item form-group" style="margin-left:800px; margin-top:-10px; ">
                                     <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <input type="file" id=name="bukti_tf">
+                                    <input type="file" name="bukti_tf">
                                     </div>
                                     </div>
                                     <br>
