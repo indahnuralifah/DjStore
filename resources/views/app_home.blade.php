@@ -290,7 +290,7 @@
         $('#form_check').submit(function(e){
             e.preventDefault();
             $.ajax({
-                url: '/order/check?no_pesanan='+$('#no_pesanan').val(),
+                url: {{url('/order/check?no_pesanan=')}}+$('#no_pesanan').val(),
                 type: 'get',
                 data: $('#form_check').serializeArray(),
                 success:function(data){
