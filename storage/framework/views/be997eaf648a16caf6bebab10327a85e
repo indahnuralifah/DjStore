@@ -11,7 +11,7 @@
 
   <link rel="apple-touch-icon" href="<?php echo e(('/assets/images/apple-touch-icon.png')); ?>">
   <link rel="shortcut icon" href="<?php echo e(('/assets/images/favicon.ico')); ?>">
-
+ 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="<?php echo e(url('/assets/css/bootstrap.min.css')); ?>">
   <link rel="stylesheet" href="<?php echo e(url('/assets/css/bootstrap-extend.min.css')); ?>">
@@ -27,6 +27,9 @@
   <!-- Plugin -->
   <link rel="stylesheet" href="<?php echo e(url('/assets/vendor/chartist-js/chartist.css')); ?>">
   <link rel="stylesheet" href="<?php echo e(url('/assets/vendor/jvectormap/jquery-jvectormap.css')); ?>">
+  <link rel="stylesheet" href="<?php echo e(url('/assets/vendor/datatables-bootstrap/dataTables.bootstrap.css')); ?>">
+  <link rel="stylesheet" href="<?php echo e(url('/assets/vendor/datatables-fixedheader/dataTables.fixedHeader.css')); ?>">
+  <link rel="stylesheet" href="<?php echo e(url('/assets/vendor/datatables-responsive/dataTables.responsive.css')); ?>">   
 
   <!-- Page -->
   <link rel="stylesheet" href="<?php echo e(url('/assets/css/../fonts/weather-icons/weather-icons.css')); ?>">
@@ -42,6 +45,8 @@
     Breakpoints();
   </script>
 </head>
+
+
 <body class="dashboard">
   <nav class="site-navbar navbar navbar-default navbar-fixed-top navbar-mega" role="navigation">
 
@@ -55,14 +60,9 @@
       data-toggle="collapse">
         <i class="icon wb-more-horizontal" aria-hidden="true"></i>
       </button>
-    <!--   <button type="button" class="navbar-toggle collapsed" data-target="#site-navbar-search"
-      data-toggle="collapse">
-        <span class="sr-only">Toggle Search</span>
-        <i class="icon wb-search" aria-hidden="true"></i>
-      </button> -->
       <div class="navbar-brand navbar-brand-center site-gridmenu-toggle" data-toggle="gridmenu">
-      <!--   <img class="navbar-brand-logo" src="<?php echo e(url('/assets/images/logo.png" title="Remark')); ?>"> -->
-        <span class="navbar-brand-text"> DJStore Admin</span>
+        <img class="navbar-brand-logo" src="../assets/images/logo.png" title="Remark">
+        <span class="navbar-brand-text"> DJStore</span>
       </div>
     </div>
 
