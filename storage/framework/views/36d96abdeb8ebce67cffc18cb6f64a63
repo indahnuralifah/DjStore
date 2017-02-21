@@ -14,8 +14,7 @@
 
     <title>
       DJStoreJakarta
-    </title>
-
+    </title>    
     <meta name="keywords" content="">
 
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100' rel='stylesheet' type='text/css'>
@@ -311,6 +310,7 @@
                         $('#gambar-pesan').html(data.order.foto);
                         $('#harga').html(data.order.harga);
                         $('#bukti-tf').html(data.order.bukti_tf);
+                        $('#gambar').html(data.order.gambar);
                            
                     }
 

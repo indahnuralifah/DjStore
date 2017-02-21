@@ -20,44 +20,6 @@ class PemesananController extends Controller {
 	public function submit(Request $r)
 	{
 
-		// $response = [];
-		// $r->telp = str_replace("_", null, $r->input('telp'));
-		// $r->telp = str_replace("-", null, $r->telp);
-
-		// $pesan = $r->all();
-		// $pesan['telp'] = $r->telp;
-
-		// $no_hp = str_replace(['_','-'],['',''],Input::get('telp'));
-		// // dd(str_replace(['_','-'],['',''],Input::get('telp')));
-
-		// // die();
-
-
-		// // echo $r->telp;
-		// if (strlen($no_hp)<12) {
-		// 	$response['success'] = false;
-		// 	$response['error_msg'] = 'Masukan data yang benar !';
-		// 	return response()->json($response);
-		// }
-
-  //   	else{
-		// 	$validator = Validator::make($r->all(), 	[
-		//         'nama' => 'required|max:255|',
-		//         'alamat' => 'required|max:255',
-		//         // 'telp' => 'required|max:255|min:12',
-		//         'hari' => 'required|max:255',
-		//         'email' => 'required|max:255',
-		//         // 'gambar_pesanan' => 'required|max:255',
-		        
-	 //    	]);
-
-	 //    	if ($validator->fails()) {
-		// 		$response['success'] = false;
-		// 		$response['error_msg'] = 'Data masih ada yang kosong.';
-	 //    		return response()->json($response);
-	 //    	}    		
-  //   	}
-		
 		$data = new Pemesanan;
 		$data->nama_pembeli = \Input::get('nama_pembeli');
 		$data->no_hp = \Input::get('no_hp');
@@ -71,6 +33,11 @@ class PemesananController extends Controller {
 		$data->keterangan = \Input::get('keterangan');
 		$data->no_pesanan = str_random(8);
 		$data->status = 'pending';
+		if(Input::hasFile('gambar')){
+			$gambar = date("YmdHisaves").uniqid().".".Input::file('gambar')->getClientOriginalExtension();
+			Input::file('gambar')->move(storage_path(),$gambar);
+			$data->gambar = $gambar;	
+		}
 		
 		$email = Input::get('email');
 		$subject = "DJStoreJakarta";
@@ -78,7 +45,15 @@ class PemesananController extends Controller {
 		"Nama Pemesan: ".$data->nama_pembeli."<br>".
 		"<b>*Copy nomor pesanan anda</b><br>".
 		"No. Pesanan: ".$data->no_pesanan."<br>".
-		"Klik <a href='".url('order')."'>disini</a> untuk mengecek orderan anda!";
+	
+		// $base64_photo = Input::get('image');
+		// list($type,$base64_photo) = explode(';',$base64_photo);
+  //       list(,$base64_photo) = explode(',',$base64_photo);
+  //       $base64_photo = base64_decode($base64_photo);
+  //       $image = round(microtime(true));
+  //       file_put_contents(storage_path().'/'.$image.'.'.Input::get('mime'),$base64_photo);
+
+  //       $data->gambar = $image.'.'.Input::get('mime');
 
 		$data->save();
 

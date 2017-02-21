@@ -20,6 +20,15 @@ class CreateProduksTable extends Migration {
 			$table->string('nama_produk');
 			$table->String('gambar');
 			$table->Integer('total');
+			//
+			$table->string('nama_pembeli');
+			$table->string('no_hp');
+			$table->string('email');
+			$table->string('alamat');
+			$table->string('no_pesanan');
+			$table->string('status');
+			$table->string('bukti_tf');
+			$table->string('status_tf');
 			$table->timestamps();
 		});
 	}

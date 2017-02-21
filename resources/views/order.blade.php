@@ -1,12 +1,23 @@
 @extends('app_home')
 @section('content')
 
+
 <style type="text/css">
     .none{
         display: none!important;
     }
-</style>
-            <div class="box">
+</style> 
+
+    <div class="col-md-10" style="margin-left:123px">
+
+                    <ul class="breadcrumb">
+                        <li><a href="#">Home</a>
+                        </li>
+                        <li>Order</li>
+                    </ul>
+            </div>
+            
+            <div class="box" style="margin-top:80px; margin-left:135px">
             <form id="form_check">
             <div class="form-group">
                   <label>Masukan Id Pemesanan</label>
@@ -72,7 +83,10 @@
                     <td>Harga</td>
                     <td id="harga"></td>
                 </tr>
-
+                <tr>
+                    <td>Contoh Design</td>
+                    <td><img src="" id="gambar"></td>
+                </tr>
                    
             </table>
                     <div class="box-footer collapse-right">
@@ -80,4 +94,13 @@
                     </div>
             </div>
     </div>
+
+     <div id="copyright" style="margin-top:240px;">
+            <div class="container">
+                <div class="col-md-6">
+                    <p class="pull-left">© 2016 Fah | Template by Responsive Templates with support from Designové předměty</p>
+                </div>
+            </div>
+    </div>
+
 @endsection

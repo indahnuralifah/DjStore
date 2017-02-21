@@ -203,13 +203,7 @@
                 <li class="site-menu-item">
                   <a class="animsition-link" href="<?php echo e(url('pembelian/add')); ?>">
                     <i class="site-menu-icon " aria-hidden="true"></i>
-                    <span class="site-menu-title">Custom</span>
-                  </a>
-                </li>
-                <li class="site-menu-item">
-                  <a class="animsition-link" href="tables/bootstrap.html" data-slug="tables-bootstrap">
-                    <i class="site-menu-icon " aria-hidden="true"></i>
-                    <span class="site-menu-title">Clothing</span>
+                    <span class="site-menu-title">Data</span>
                   </a>
                 </li>
               </ul>

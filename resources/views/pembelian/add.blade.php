@@ -50,7 +50,7 @@
         });
       })();
 
-  function showData(no_pesanan,nama_pembeli,no_hp,email,alamat,nama_barang,jenis_barang,warna,ukuran,jumlah_barang,keterangan,status, foto,harga,bukti_tf) {
+  function showData(no_pesanan,nama_pembeli,no_hp,email,alamat,nama_barang,jenis_barang,warna,ukuran,jumlah_barang,keterangan,status, foto,harga,bukti_tf,gambar) {
  
                         $('#no-pesanan').html(no_pesanan);
                         $('#nama-pesan').html(nama_pembeli);
@@ -67,6 +67,8 @@
                         $('#gambar-pesan').html(foto);
                         $('#harga').html(harga);
                         $('#bukti-tf').html(bukti_tf);
+                        // $('#gambar-pesan').attr('src',gambar.replace("img  ","images"));
+                        //  console.log()
 
   }
 </script>
@@ -159,11 +161,11 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Pesanan <span id="title-pesan"></span></h4>
+        <h2 class="modal-title" id="myModalLabel">Pesanan <span id="title-pesan"></span></h2>
       </div>
       <div class="modal-body">
         <div class="row" style="margin: auto;">
-            <table class="table">
+            <table class="table" id="example1">
                 <tr>
                     <td>Nomor Pemesanan</td>
                     <td id="no-pesanan"></td>
@@ -209,6 +211,10 @@
                     <td id="about"></td>
                 </tr>
                 <tr>
+                  <td>Contoh Design</td>
+                  <td id="gambar"></td>
+                </tr>
+                <tr>
                   <td>Status</td>
                   <td id="state"></td>
                 </tr>
@@ -220,11 +226,12 @@
                   <td>Bukti Transfer</td>
                   <td id="bukti-tf"></td>
                 </tr>
+                
             </table>
         </div>
-        <div>
+       <!--  <div>
           <img src="" style="max-width:100%; height:auto" id="gambar-pesan">
-        </div>
+        </div> -->
       </div>
      
     </div>
@@ -232,4 +239,6 @@
 </div> 
 </div>
 </div> 
+
+
 @endsection

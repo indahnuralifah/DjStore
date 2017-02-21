@@ -94,7 +94,7 @@ class ProdukController extends Controller {
 		if(Input::hasFile('gambar')){
 			$gambar = date("YmdHisaves")
 			.uniqid().".".Input::file('gambar')->getClientOriginalExtension();
-			Input::file('gambar')->move(public_path(),$gambar);
+			Input::file('gambar')->move(storage_path(),$gambar);
 			$post->gambar = $gambar;
 		}
 		$post->save();

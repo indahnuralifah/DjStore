@@ -1,6 +1,8 @@
 <?php $__env->startSection('content'); ?>
     <script src="<?php echo e(url('js/jquery-1.11.0.min.js')); ?>"></script>
-
+     <script src="<?php echo e(url('ckeditor/ckeditor.js')); ?>"></script>
+     <script type="text/javascript">CKEDITOR_BASEPATH = "<?php echo e(url('/ckeditor/')); ?>";
+      CKEDITOR.replace('ket', {toolbar : 'standard',width : '99%',height : '300px'});</script>
 <script type="text/javascript">
     $.ajaxSetup({
             headers: {
@@ -27,7 +29,7 @@
               alert(data.error_msg);
             }
             else{
-              $('#p_id').html('Terimakasih sudah memesan :) <a href="/order">klik disini</a></p> <b>*Copy nomor pesanan anda</b> </p>'+'<h1>'+data.nomor_pesanan.no_pesanan+'</h1>');
+              $('#p_id').html('Terimakasih sudah memesan :) Silahkan cek email anda </p>'+'<h1>'+data.nomor_pesanan.no_pesanan+'</h1>');
               $('#no_pesanan').modal();
             }
           // }
@@ -64,46 +66,54 @@
         <!-- /.modal -->
       </div>
       </div>
+
+
+       <div class="col-md-10" style="margin-left:123px">
+
+                    <ul class="breadcrumb">
+                        <li><a href="#">Home</a>
+                        </li>
+                        <li>Custom</li>
+                    </ul>
+        </div>
        
-<div class="col-md-9">
+<div class="col-md-12">
                     <div class="box">
                         <h1>Custom Items</h1>
                         <p class="lead">Bisa mengcustom items sesuka hati kamu</p>
-                        <p class="text-muted">Hanya berlaku untuk Jersey, T-Shirt, Topi.</p>
+                        <p class="text-muted">*Hanya berlaku untuk Jersey, T-Shirt, Topi.</p>
 
                         
                        
                         
             <div class="x_content">
 
-            <form id="modal_form" role="form" autocomplete="off">
+            <form id="modal_form" role="form" autocomplete="off" enctype="multipart/form-data">
             <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
-                            <div class="row">
+                           <!--  <div class="row"> -->
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="password_old">Nama Pemesan</label>
                                         <input type="text" name="nama_pembeli" class="form-control" id="nama_pembeli">
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row">
+                           <!--  </div> -->
+                           <!--  <div class="row"> -->
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="password_1">Nomor Telepon</label>
-                                      <!--   <input name="telp" class="form-control" id="nomor_telepon" required="" type="text" value="<?php echo e(old('telp')); ?>" data-inputmask='"mask": "9999-9999-9999"' data-mask>
-                  <input type="hidden" name="hidden_phone"> -->
                                         <input type="number" name="no_hp" class="form-control" id="no_hp">
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row">
+                         <!--    </div> -->
+                           <!--  <div class="row"> -->
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="password_2">Email</label>
                                         <input type="text" name="email" class="form-control" id="email">
                                     </div>
                                 </div>
-                            </div>
+                         <!--    </div> -->
 
                              <div class="row">
                                 <div class="col-sm-6">
@@ -114,12 +124,10 @@
                                 </div>
                             </div>
 
-                    
-                           
 
                         <hr>
 
-                        <h4>Details</h4>
+                        <h3>Details</h3>
                         
                             <div class="row">
                                 <div class="col-sm-6">
@@ -175,17 +183,29 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="email">Keterangan</label>
-                                          <textarea type="message" name="keterangan" class="form-control" id="keterangan" ></textarea
+                                          <textarea type="message" name="keterangan" class="form-control" id="ket" > </textarea>
+                                          <script>CKEDITOR.replace('text-ckeditor');</script>
                                     </div>
                                 </div>
-                                <div class="col-sm-12 text-center">
+                                <div class="col-sm-6" style="margin-left:539px;">
+                                    <div class="form-group">
+                                        <label for="gambar">Contoh Design</label>
+                                        <input type="file" class="form-control" name="gambar" id="gambar">
+                                     <!--    <input type="hidden" name="image" id="image">
+                                        <input type="hidden" name="mime" id="mime">  -->
+                                        <p class="help-block">Masukan gambar design yang anda inginkan</p>
+                                    </div>
+                                </div>
+          
+                                <div class="col-sm-12 text-right">
                                     <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Save changes</button>
-
                                 </div>
                             </div>
                         </form>
                     </div>
-               
+               </div>
+            </div>
+
 
         
                    

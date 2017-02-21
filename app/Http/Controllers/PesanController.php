@@ -8,6 +8,7 @@ use App\Pesan;
 use App\Pemesanan;
 use App;
 use App\Custom;
+use App\Produk;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 
@@ -73,23 +74,7 @@ class PesanController extends Controller {
 	}
     public function checkout_order_save()
     {
-         //    if (session('no_pesanan')) {
-         // $foto = strtoupper(str_slug(strtoupper(Input::get('name'))))."-".date("YmdHis").uniqid().".".Input::file('gambar')->getClientOriginalExtension();
-         //    Input::file('gambar')->move(public_path(),$foto);
-         //    $post->bukti_tf = $foto;
-        // $post = new \App\Custom;
-        // if(Input::hasFile('bukti_tf')){
-        //     $bukti_tf = date("YmdHisaves")
-        //     .uniqid().".".Input::file('gambar')->getClientOriginalExtension();
-        //     Input::file('gambar')->move(public_path()."/gambar",$bukti_tf);
-        //     $post->bukti_tf = $bukti_tf;
-        // }
-        // $post->save();
-
-     
-        // return redirect(url('/checkout/order/'));
-        //      }
-
+    
         if (session('nomor_pesanan')) {        
             $select_order = Custom::where('no_pesanan', session()->pull('nomor_pesanan'))->first();
 
@@ -103,6 +88,51 @@ class PesanController extends Controller {
         return $select_order;
         // return redirect()->back();
     }
+
+
+    public function checkout()
+    {   
+        $data = Produk::all();
+        $data = $r->session()->get('cart');
+        $total = 0;
+        foreach($r->session()->get('cart') as $data){
+            $total = $total + $data['harga'];
+        }
+        // return $r->session()->get('cart');
+
+        // return $total;
+        // return $cart;
+        // return $r->session()->get('cart');
+        return view('checkout.add',['data'=>$r->session()->get('cart'), 'total' => $total]);
+    }
+
+    public function address_save()
+    {   
+        $post = new \App\Custom;
+        $post->nama_produk = Input::get('nama_pembeli');
+        $post->nama_produk = Input::get('email');
+        $post->nama_produk = Input::get('no_hp');
+        $post->nama_produk = Input::get('alamat');
+        $post->save();
+        return redirect(url('checkout/add1'));
+    }
+
+
+    public function checkout1()
+    {   
+        $data = Produk::all();
+        return view('checkout.add1');
+    }
+
+    public function checkout2()
+    {   
+        $data = Produk::all();
+        return view('checkout.add2');
+    }
 	    
+
+
+
+
 
 }

@@ -91,6 +91,7 @@ Route::group(['prefix'=>'admin', 'middleware' => ['auth']], function(){
 Route::get('addtocart/{id}','DracoController@addtocart');
 Route::get('/cart','DracoController@cart');
 Route::post('/cart/checkout', 'DracoController@cart_checkout');
+
 Route::get('/gambar/{filename}',
 	function ($filename)
 {
@@ -105,6 +106,7 @@ Route::get('/gambar/{filename}',
 
 	return $response;
 });	
+
 Route::get('auth/logout','Auth\AuthController@getLogout');	
 Route::post('/trylogin', ['as'=>'login','uses'=>'DracoController@tryLogin']);
 
@@ -119,21 +121,19 @@ Route::get('pesan/add2','PesanController@add2');
 Route::post('/checkout/buktitf/save','PesanController@checkout_order_save');
 
 
-Route::get('/bukti_tf/{filename}',
-	function ($filename)
-{
-	$path = storage_path().
-	'/' . $filename;
+//CHECKOUT
+Route::get('checkout/add','PesanController@checkout');
+Route::post('/checkout/custom/save/{id}','PesanController@address_save');
 
-	$file = File::get($path);
-	$type = File::mimeType($path);
+Route::get('checkout/add1','PesanController@checkout1');
+Route::post('/checkout/payment/save','PesanController@payment_save');
 
-	$response = Response::make($file, 200);
-	$response->header("Content-Type", $type);
+Route::get('checkout/add2','PesanController@checkout2');
+Route::post('/checkout/buktitf/save','PesanController@order_save');
 
-	return $response;
-});	
 
+Route::get('/images/{filename}','ImageController@index');
+Route::get('/img/{filename}','ImageController@index'); 
 
 // Route::get('password/{value}', function($value) {
 // 	return bcrypt($value);

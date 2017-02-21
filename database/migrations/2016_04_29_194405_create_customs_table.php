@@ -30,6 +30,10 @@ class CreateCustomsTable extends Migration {
 			$table->string('bukti_tf');
 			$table->string('status_tf');
 			$table->string('harga');
+			$table->string('gambar');
+			$table->string('total');
+			// $table->integer('produks_id')->unsigned();
+			// $table->foreign('produks_id')->references('id')->on('produks')->onDelete('cascade')->onUpdate('cascade');
 			$table->timestamps();
 		});
 	}

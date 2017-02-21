@@ -298,7 +298,7 @@ class DracoController extends Controller {
         $password = $r->input('password');
         $checkEmail = User::where('email', $email)->first();
         
-        // return bcrypt("okebanget");
+        // return bcrypt("okebanget");	
         if (count($checkEmail) == 0) {
             // kalo error
             $r->session()->put('error', 'Email tidak ditemukan!');

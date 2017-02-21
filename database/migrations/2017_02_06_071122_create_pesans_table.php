@@ -16,6 +16,7 @@ class CreatePesansTable extends Migration {
 		{
 			$table->increments('id');
 			
+			
 			$table->timestamps();
 		});
 	}

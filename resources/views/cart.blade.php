@@ -81,8 +81,7 @@
                             <div class="box-footer">
                                 
                                 <div class="pull-right">
-                                    <button type="submit" class="btn btn-primary">checkout <i class="fa fa-chevron-right"></i>
-                                    </button>
+                                     <a href="{{url('checkout/add')}}" class="btn btn-default navbar-btn" >Checkout</a>    
                                 </div>
                             </div>
                             </form>
