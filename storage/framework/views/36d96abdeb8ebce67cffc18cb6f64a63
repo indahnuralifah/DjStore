@@ -310,7 +310,8 @@
                         $('#gambar-pesan').html(data.order.foto);
                         $('#harga').html(data.order.harga);
                         $('#bukti-tf').html(data.order.bukti_tf);
-                        $('#gambar').html(data.order.gambar);
+                        // $('#gambar').html(data.order.gambar);
+                        $('#gambar').attr('src','/images/'+data.order.gambar_pesanan);
                            
                     }
 

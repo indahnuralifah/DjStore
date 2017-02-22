@@ -28,8 +28,8 @@
             if (data.success==false) {
               alert(data.error_msg);
             }
-            else{
-              $('#p_id').html('Terimakasih sudah memesan :) Silahkan cek email anda </p>'+'<h1>'+data.nomor_pesanan.no_pesanan+'</h1>');
+           else{
+              $('#p_id').html(' </p> <h3><b>SILAHKAN CEK EMAIL ANDA UNTUK MENGETAHUI NOMOR PESANAN</b></3> </p>');
               $('#no_pesanan').modal();
             }
           // }
@@ -51,12 +51,13 @@
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Nomor Pemesanan Anda</h4>
+                <h4 class="modal-title">Terimakasih sudah memesan :)</h4>
               </div>
               <div class="modal-body">
-                <p id="p_id"></p>
+                <p id="p_id"></p>                           
+              </div>
+              <div class="modal-footer">
+                <a href="<?php echo e(url('/')); ?>"><button type="button" class="btn btn-default pull-right">Close</button></a>
               </div>
             </div>
             <!-- /.modal-content -->
@@ -65,7 +66,7 @@
         </div>
         <!-- /.modal -->
       </div>
-      </div>
+      <!-- </div> -->
 
 
        <div class="col-md-10" style="margin-left:123px">
@@ -81,7 +82,7 @@
                     <div class="box">
                         <h1>Custom Items</h1>
                         <p class="lead">Bisa mengcustom items sesuka hati kamu</p>
-                        <p class="text-muted">*Hanya berlaku untuk Jersey, T-Shirt, Topi.</p>
+                        <p class="text-muted">*Hanya berlaku untuk Jersey, T-Shirt</p>
 
                         
                        
@@ -142,7 +143,7 @@
                                         <select class="form-control" name="jenis_barang" id="jenis_barang">
                                             <option>Jersey</option>
                                             <option>TShirt</option>
-                                            <option>Topi</option>
+                                           
                                         </select>
                                     </div>
                                 </div>
@@ -190,9 +191,9 @@
                                 <div class="col-sm-6" style="margin-left:539px;">
                                     <div class="form-group">
                                         <label for="gambar">Contoh Design</label>
-                                        <input type="file" class="form-control" name="gambar" id="gambar">
-                                     <!--    <input type="hidden" name="image" id="image">
-                                        <input type="hidden" name="mime" id="mime">  -->
+                                        <input type="file" class="form-control" name="gambar_pesanan" id="gambar">
+                                        <input type="hidden" name="image" id="image">
+                                        <input type="hidden" name="mime" id="mime"> 
                                         <p class="help-block">Masukan gambar design yang anda inginkan</p>
                                     </div>
                                 </div>

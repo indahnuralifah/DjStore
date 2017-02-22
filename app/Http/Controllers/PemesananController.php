@@ -33,11 +33,11 @@ class PemesananController extends Controller {
 		$data->keterangan = \Input::get('keterangan');
 		$data->no_pesanan = str_random(8);
 		$data->status = 'pending';
-		if(Input::hasFile('gambar')){
-			$gambar = date("YmdHisaves").uniqid().".".Input::file('gambar')->getClientOriginalExtension();
-			Input::file('gambar')->move(storage_path(),$gambar);
-			$data->gambar = $gambar;	
-		}
+		// if(Input::hasFile('gambar')){
+		// 	$gambar = date("YmdHisaves").uniqid().".".Input::file('gambar')->getClientOriginalExtension();
+		// 	Input::file('gambar')->move(storage_path(),$gambar);
+		// 	$data->gambar_pesanan = $gambar_pesanan;	
+		// }
 		
 		$email = Input::get('email');
 		$subject = "DJStoreJakarta";
@@ -45,6 +45,7 @@ class PemesananController extends Controller {
 		"Nama Pemesan: ".$data->nama_pembeli."<br>".
 		"<b>*Copy nomor pesanan anda</b><br>".
 		"No. Pesanan: ".$data->no_pesanan."<br>".
+		// "Klik <a href='".url('order')."'>disini</a> untuk mengecek orderan anda!";
 	
 		// $base64_photo = Input::get('image');
 		// list($type,$base64_photo) = explode(';',$base64_photo);
